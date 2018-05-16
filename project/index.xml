@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stan Pepels</title>
+    <link>StanPepels.github.io/project/</link>
+    <description>Recent content on Stan Pepels</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Your Name</copyright>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="StanPepels.github.io/project/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>dear father</title>
+      <link>StanPepels.github.io/project/dear-father/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>StanPepels.github.io/project/dear-father/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>orbis</title>
+      <link>StanPepels.github.io/project/orbis/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>StanPepels.github.io/project/orbis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clouded</title>
+      <link>StanPepels.github.io/project/clouded/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>StanPepels.github.io/project/clouded/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AGR</title>
+      <link>StanPepels.github.io/project/agr/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>StanPepels.github.io/project/agr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project sulphur</title>
+      <link>StanPepels.github.io/project/project-sulphur/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>StanPepels.github.io/project/project-sulphur/</guid>
+      <description>&lt;p&gt;Project sulphur can be subdivided into 3 catagories: engine, builder and editor. &lt;br&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;The engine:&lt;/strong&gt; is the library with all the functionality required to run the game such as rendering, physics, networking etc&amp;hellip;
+    &lt;li&gt;&lt;strong&gt;The builder:&lt;/strong&gt; is a standalone command line tool that is used to package raw assets into game ready formats used by the engine.
+    &lt;li&gt;&lt;strong&gt;The editor:&lt;/strong&gt; is the enviroment where the engines features are exposed in a user friendly interface. This is where you can create your game projects, levels etc&amp;hellip;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Engine work:&lt;/strong&gt; My main work on the engine is on the interfaces that allow the engine to communicate with the engine. The engine is connected to the editor via the network.
+This means that the engine you see in the editor is its own seperate process. Another benefit of this connection is that we could in theory launch a second or even a third engine in editor mode and have all engines connect to a single editor instance.
+These other versions could run on other machines such as a PS4 devkit. This in turn would then allow for simultanious testing and developing for multiple platforms without having to switch around platforms or create a build before testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Builder work&lt;/strong&gt; With the builder I mainly worked on the command line interfaces. These interfaces allow other programmers to easely add commands with flags and arguments to the builder. I was also responsible for doing the shader pipeline.
+The shader pipeline takes in a shader written in hlsl with some custom definitions. This single file is then converted into a shader package that can be loaded by the engine and used to render with Directx12, Vulkan and GNM(PS4).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AbDuckTed</title>
+      <link>StanPepels.github.io/project/abduckted/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>StanPepels.github.io/project/abduckted/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NIMBY</title>
+      <link>StanPepels.github.io/project/nimby/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>StanPepels.github.io/project/nimby/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
