@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stan Pepels on Stan Pepels</title>
-    <link>StanPepels.github.io/</link>
+    <link>/</link>
     <description>Recent content in Stan Pepels on Stan Pepels</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Your Name</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="StanPepels.github.io/" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>dear father</title>
-      <link>StanPepels.github.io/project/dear-father/</link>
+      <link>/project/dear-father/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>StanPepels.github.io/project/dear-father/</guid>
+      <guid>/project/dear-father/</guid>
       <description></description>
     </item>
     
     <item>
       <title>orbis</title>
-      <link>StanPepels.github.io/project/orbis/</link>
+      <link>/project/orbis/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>StanPepels.github.io/project/orbis/</guid>
+      <guid>/project/orbis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>clouded</title>
-      <link>StanPepels.github.io/project/clouded/</link>
+      <link>/project/clouded/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>StanPepels.github.io/project/clouded/</guid>
+      <guid>/project/clouded/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AGR</title>
-      <link>StanPepels.github.io/project/agr/</link>
+      <link>/project/agr/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>StanPepels.github.io/project/agr/</guid>
+      <guid>/project/agr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>project sulphur</title>
-      <link>StanPepels.github.io/project/project-sulphur/</link>
+      <link>/project/project-sulphur/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>StanPepels.github.io/project/project-sulphur/</guid>
+      <guid>/project/project-sulphur/</guid>
       <description>&lt;p&gt;Project sulphur can be subdivided into 3 catagories: engine, builder and editor. &lt;br&gt;
 &lt;ul&gt;
     &lt;li&gt;&lt;strong&gt;The engine:&lt;/strong&gt; is the library with all the functionality required to run the game such as rendering, physics, networking etc&amp;hellip;
@@ -70,46 +70,46 @@ The shader pipeline takes in a shader written in hlsl with some custom definitio
     
     <item>
       <title>AbDuckTed</title>
-      <link>StanPepels.github.io/project/abduckted/</link>
+      <link>/project/abduckted/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>StanPepels.github.io/project/abduckted/</guid>
+      <guid>/project/abduckted/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NIMBY</title>
-      <link>StanPepels.github.io/project/nimby/</link>
+      <link>/project/nimby/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>StanPepels.github.io/project/nimby/</guid>
+      <guid>/project/nimby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Choosing a framework for tool development</title>
-      <link>StanPepels.github.io/post/tools-framework/</link>
+      <link>/post/tools-framework/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>StanPepels.github.io/post/tools-framework/</guid>
+      <guid>/post/tools-framework/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Custom Physics</title>
-      <link>StanPepels.github.io/post/custom-physics/</link>
+      <link>/post/custom-physics/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>StanPepels.github.io/post/custom-physics/</guid>
+      <guid>/post/custom-physics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools for fools</title>
-      <link>StanPepels.github.io/post/tools-for-fools/</link>
+      <link>/post/tools-for-fools/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>StanPepels.github.io/post/tools-for-fools/</guid>
+      <guid>/post/tools-for-fools/</guid>
       <description></description>
     </item>
     
