@@ -373,17 +373,60 @@
             <h2>Details</h2>
             <p>Project sulphur can be subdivided into 3 catagories: engine, builder and editor. <br>
 <ul>
-    <li><strong>The engine:</strong> is the library with all the functionality required to run the game such as rendering, physics, networking etc&hellip;
-    <li><strong>The builder:</strong> is a standalone command line tool that is used to package raw assets into game ready formats used by the engine.
-    <li><strong>The editor:</strong> is the enviroment where the engines features are exposed in a user friendly interface. This is where you can create your game projects, levels etc&hellip;
+    <li><strong>The engine:</strong> is the library with all the functionality required to run the game such as rendering, physics, networking etc&hellip; This is completely written in C++.
+    <li><strong>The builder:</strong> is a standalone command line tool that is used to package raw assets into game ready formats used by the engine. Like the enigne this is written in C++.
+    <li><strong>The editor:</strong> is the enviroment where the engines features are exposed in a user friendly interface. This is where you can create your game projects, levels etc&hellip; The editor is mainly written in C#/xaml but uses some DLLs written in C++.
 </ul></p>
 
-<p><strong>Engine work:</strong> My main work on the engine is on the interfaces that allow the engine to communicate with the engine. The engine is connected to the editor via the network.
+<div style="position: relative;">
+    
+    <strong>Engine work:</strong> My main work on the engine is on the interfaces that allow the engine to communicate with the engine. The engine is connected to the editor via the network.
 This means that the engine you see in the editor is its own seperate process. Another benefit of this connection is that we could in theory launch a second or even a third engine in editor mode and have all engines connect to a single editor instance.
-These other versions could run on other machines such as a PS4 devkit. This in turn would then allow for simultanious testing and developing for multiple platforms without having to switch around platforms or create a build before testing.</p>
+These other versions could run on other machines such as a PS4 devkit. This in turn would then allow for simultanious testing and developing for multiple platforms without having to switch around platforms or create a build before testing.
+    
+</div>
 
-<p><strong>Builder work</strong> With the builder I mainly worked on the command line interfaces. These interfaces allow other programmers to easely add commands with flags and arguments to the builder. I was also responsible for doing the shader pipeline.
-The shader pipeline takes in a shader written in hlsl with some custom definitions. This single file is then converted into a shader package that can be loaded by the engine and used to render with Directx12, Vulkan and GNM(PS4).</p>
+<p><div style="float: right; position: relative; width: 50%;">
+    <div>
+        <img src="/gifs/sulphur-builder.gif" style="display: block;
+  width: 100%;
+             
+             margin: 5% 0% 0% 0%;"/>
+                                      
+    </div>
+    
+    <div style="text-align: center; font-size: 70%;">Converting multiple assets types using the sulphur builder.</div>
+    
+</div>
+<div style="position: relative;">
+    
+    <strong>Builder work:</strong> With the builder I mainly worked on the command line interfaces. These interfaces allow other programmers to easely add commands with flags and arguments to the builder. I was also responsible for doing the shader pipeline.
+The shader pipeline takes in a shader written in hlsl with some custom definitions. This single file is then converted into a shader package that can be loaded by the engine and used to render with Directx12, Vulkan and GNM(PS4).
+    
+</div></p>
+
+<p><div style="float: left; position: relative; width: 50%;">
+    <div>
+        <img src="/gifs/sulphur-editor.gif" style="display: block;
+  width: 100%;
+             
+             margin: 3% 0% 0% -3%;"/>
+                                      
+    </div>
+    
+    <div style="text-align: center; font-size: 70%;">Assets can also be imported in the editor and instantiated in the world.</div>
+    
+</div>
+<div style="position: relative;">
+    
+    <p><strong>Editor work:</strong> Most of my contribution in this project was with the editor. I wrote the interface and utility classes that allow the editor to recieve, process and send messages to connected engines.
+I also wrote an interface that allows controls and systems to be developed completely seperate whilst still being able to act upon actions or event that happen in different systems. Besides this I was resonsinsible for creating the world view, asset browser, logger, and menu bar.
+The editor also has a project pipeline allowing you to set up multiple game projects. Each project can be shared with other people since all paths are relative.</p>
+
+<p>Under the hood the editor uses a DLL version of the sulphur builder. I worked on exposing the sulphur builder(written in C++) functionality to C# so it can be used by the editor.</p>
+
+    
+</div></p>
 
         </div>
 
