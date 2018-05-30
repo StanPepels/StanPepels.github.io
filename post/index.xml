@@ -16,7 +16,152 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>/post/tools-framework/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;One of the first decisions to make when thinking about building a toolset is what framework you are going to use. Since there are quite a few options out there it can be a pretty hard decision as to what framework you’d want to go for. Every framework comes with its pros and cons. When I was deciding which framework to use I selected the following candidates:
+&lt;ol&gt;
+&lt;li&gt;&lt;b&gt;ATF:&lt;/b&gt; On paper, this framework looks perfect for our needs. It’s build upon WinForms C# and is built specifically for developing game development tools. Besides this, it’s documentation seems to very extensive.&lt;/li&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;li&gt;&lt;b&gt;QT:&lt;/b&gt; QT is a C   library for creating UI applications. A lot of good apps have been created using QT which proves it capabilities. Another big plus is of course that it’s written in C  , a language I’m familiar with and gives a lot of low level control and speed.&lt;/li&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;li&gt;&lt;b&gt;WPF:&lt;/b&gt; WPF (Windows Presentation Foundation) is the successor of WinForms and, like WinForms, it’s build upon the .NET framework and written in C#. It also uses xaml as a mark-up language and was built to have better performance than WinForms.&lt;/li&gt;
+&lt;/ol&gt;
+My goal was to get an external renderer working in all frameworks and see which one was the easiest to implement.&lt;/p&gt;
+
+&lt;h2 id=&#34;atf&#34;&gt;ATF&lt;/h2&gt;
+
+&lt;p&gt;One thing I soon discovered when working with ATF is that it’s no longer as well maintained as it used to be. In the first place, it’s no longer being developed by Sony WWS. Secondly, the open forums are deserted with the most recent post originating from 2015. This wouldn’t be a problem if the framework itself wasn’t hard to learn. But as it turns out, it has a very steep learning curve. These things combined made it hard to get anything working properly. And besides this, there are a few other quirks that make this framework worse than when I initially heard about it. Here are a few of the other things that hindered my development:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;    It’s based on WinForms, but how the use WinForms is unclear.&lt;/li&gt;
+&lt;li&gt;    It has a lot of third party dependencies (13 in total if you choose to use all available modules).&lt;/li&gt;
+&lt;li&gt;    The samples are unclear as to what they do and how systems talk to each other.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;i&gt;Summary:&lt;/i&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Pros&lt;/th&gt;
+&lt;th&gt;Cons&lt;/th&gt;
+&lt;/tr&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;tr&gt;
+&lt;td&gt;Mature codebase&lt;/td&gt;
+&lt;td&gt;It has a very steep learning curve&lt;/td&gt;
+&lt;/tr&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;tr&gt;
+&lt;td&gt;It’s very flexible (MEF based)&lt;/td&gt;
+&lt;td&gt;It’s no longer under active development&lt;/td&gt;
+&lt;/tr&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;tr&gt;
+&lt;td&gt;It comes with a lot of basic features&lt;/td&gt;
+&lt;td&gt;It’s no longer supported by sony&lt;/td&gt;
+&lt;/tr&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;tr&gt;
+&lt;td&gt;ports both WPF and (WinForms although it’s main focus is WinForms)&lt;/td&gt;
+&lt;td&gt;It can be hard to debug if you are new to the system because of all the abstraction layers &lt;/td&gt;
+&lt;/tr&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;A lot of third party dependencies&lt;/td&gt;
+&lt;/tr&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Written in C# thus interoperation code will be required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;qt&#34;&gt;QT&lt;/h2&gt;
+
+&lt;p&gt;QT is a very large library with lots of functionality. It also took me considerably less effort to get my test working (approximately 4 hours). The interface looks well developed and understandable and the result is pretty good. The main downside however lies with one of its strengths. Because it’s such a vast library it can be quite hard to find the right class/system for the job. It might also be too large for what I need.&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;Summary:&lt;/i&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Pros&lt;/th&gt;
+&lt;th&gt;Cons&lt;/th&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Written in C  &lt;/td&gt;
+&lt;td&gt;Not tailored to game development specifically&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Under active development/well maintained&lt;/td&gt;
+&lt;td&gt;Because it’s such a big library it can be hard to find the right information&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Lots and lots of functionality&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h2 id=&#34;wpf&#34;&gt;WPF&lt;/h2&gt;
+
+&lt;p&gt;WPF is as bare bones as it gets. It only has a minimal amount of controls to start off with but the most important things are there. It’s also relatively easy to create your own controls/systems to suit your needs. It took me approximately 3 hours to get my sample working using WPF which was a pleasant surprise. WPF is written in C#, giving you a bit more control over directory operations which is nice when creating an editor.&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;Summary:&lt;/i&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Pros&lt;/th&gt;
+&lt;th&gt;Cons&lt;/th&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Its newer than WinForms&lt;/td&gt;
+&lt;td&gt;Almost everything has to be built from scratch&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Clear distinction between mark-up and behaviour&lt;/td&gt;
+&lt;td&gt;Written in C# thus interoperation code will be required&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Easy to create new controls&lt;/td&gt;
+&lt;td&gt;Not yet many third party controls available&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Lots of controllability&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Build around data binding&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;&lt;p&gt;
+Looking back at the pros and cons of all three frameworks it becomes clear that there are 2 main contenders, namely &lt;b&gt;QT&lt;/b&gt; and &lt;b&gt;WPF&lt;/b&gt;. On one hand QT is built in C   which is fast. QT also has lots of out of the box functionality. WPF on the other hand offers lots of control and an easy to understand interface.
+In the end, I decided to go with WPF since I have the time to develop the tools and the controllability is really tempting. Choosing for WPF will also keep my dependencies to a minimum (at the cost of some overhead that comes with C# and the .NET framework). One downside is the requirement of writing an interoperation layer. But since we decided that the editor will be a separate process from the engine this would also be required with a C   application (albeit slightly less work).
+&lt;/p&gt;
+ &lt;/p&gt;
+
+&lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;
+
+&lt;p&gt;&lt;b&gt;ATF:&lt;/b&gt; &lt;a href=&#34;https://github.com/SonyWWS/ATF/wiki&#34;&gt;https://github.com/SonyWWS/ATF/wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;WPF:&lt;/b&gt; &lt;a href=&#34;https://docs.microsoft.com/en-us/dotnet/framework/wpf/index&#34;&gt;https://docs.microsoft.com/en-us/dotnet/framework/wpf/index&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;QT:&lt;/b&gt; &lt;a href=&#34;https://www.qt.io/&#34;&gt;https://www.qt.io/&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -34,7 +179,68 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
       <guid>/post/tools-for-fools/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;First of all I have to apologise for being a week late with this post. You would all get a cookie if I knew how to get it to you &lt;em&gt;(Editor note: No rights can be deduced from this statement)&lt;/em&gt;, but I don’t, so… Without further ado, let’s do this.&lt;/p&gt;
+
+&lt;p&gt;Welcome to the most interesting and important update of them all, the tools update! We hope to inform you guys on the current status of our intuitive asset pipeline. We’ll cover the new features that come with our tools and give a quick showcase on how to use them.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-this-asset-pipeline-you-speak-of&#34;&gt;What is this asset pipeline you speak of?&lt;/h2&gt;
+
+&lt;p&gt;The way most people will see the asset pipeline is through its user-friendly command line interface. Looks can be deceiving, as this seemingly simple tool is in fact very powerful. If you’re used to other command line tools you’ll know they are a pain to use. Unfortunately, this one is not much different but we tried to make it as streamlined as possible.&lt;/p&gt;
+
+&lt;p&gt;First let me explain the main goal of the tool and why we need it. Its main goal is to take raw assets created in software such as Maya and convert them to a game ready format.&lt;/p&gt;
+
+&lt;h2 id=&#34;so-why-do-we-need-to-convert-assets&#34;&gt;So why do we need to convert assets?&lt;/h2&gt;
+
+&lt;p&gt;Well, the main reason is that certain file types are faster to read and / or take up less space on your disk. Of course having minute long load times or gigabyte size downloads are not on our wishlist. So in order to convert the raw files we build a tool that converts the assets for you because unless you are some kind of robot, it will take you ages to convert the files by hand.&lt;/p&gt;
+
+&lt;p&gt;With that quick explanation out of the way let’s talk about how to use this tool and what features it supports.
+We already support a bunch of the most common formats, such as
+- the &lt;strong&gt;.fbx&lt;/strong&gt; and &lt;strong&gt;.obj&lt;/strong&gt; model formats,
+- the &lt;strong&gt;.png&lt;/strong&gt;, &lt;strong&gt;.jpeg&lt;/strong&gt;, &lt;strong&gt;.bmp&lt;/strong&gt;, &lt;strong&gt;.dds&lt;/strong&gt; and &lt;strong&gt;.tga&lt;/strong&gt; (HDR is still being worked on) texture formats,
+- and shaders written in the &lt;strong&gt;High Level Shader Language&lt;/strong&gt; (HLSL)&lt;/p&gt;
+
+&lt;p&gt;You use the tool by running it from the command line or by running the sulphur-builder.exe directly and type commands in the window that opens. Doing it via the .exe gives you a few more options such as setting the working directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://projectsulphur.com/blog-media/asset_convertor.gif&#34; alt=&#34;Gif of the current editor&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;so-it-s-all-done-via-commands&#34;&gt;So it’s all done via commands?&lt;/h2&gt;
+
+&lt;p&gt;Well no, not anymore. For the first 6 weeks you had to use the command line tool as explained above. But at long last, we’ve finally started on an actual editor. This editor implements the asset pipeline via a nice GUI where you can simply drag and drop your files which then get converted immediately. In addition to this, the editor gives you the ability to manage your workspace folder structure and also allows you to view the assets in the engine via the scene view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://projectsulphur.com/blog-media/editor.gif&#34; alt=&#34;Gif of the current editor&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-few-technical-nitbits&#34;&gt;A few technical nitbits&lt;/h2&gt;
+
+&lt;p&gt;For starters, our materials are shader based. These shaders are automatically compiled for all three of our rendering APIs. In other words, a 300% productivity boost! You know what else kills your productivity? Having to restart the engine when it crashes &lt;s&gt;&lt;em&gt;(*cough* UE4 *cough*)&lt;/em&gt;&lt;/s&gt;. Well worry no more. Our editor and engine are completely separate applications communicating over the network. So next time you are running your broken rotation script, your work is safe! The editor will automatically recover, which is lightning-fast because all assets are shared.&lt;/p&gt;
+
+&lt;h2 id=&#34;future-features&#34;&gt;Future features&lt;/h2&gt;
+
+&lt;p&gt;Next to all the features mentioned above there is still a lot left to do. We would like to support a lot more assets than just textures, models and shaders. We also need to do a lot of work on the editor before its ready.&lt;/p&gt;
+
+&lt;p&gt;For the asset pipeline the following is planned to be supported:
+- Scripts
+- Audio files
+- Proper texture processing like compression
+- HDR textures
+- Support for the all new GL Transmission Format (GLTF)
+- Fonts&lt;/p&gt;
+
+&lt;p&gt;And for the editor the awesome things you can look forward to seeing are:
+- Gizmos
+- A hierarchy viewer
+- A material property editor
+- Project saving/loading
+- World saving/loading
+- Playback controls for the Sulphur Rewinder™ (more info on that soon)&lt;/p&gt;
+
+&lt;h2 id=&#34;recap&#34;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;So to quickly recap: Our current tool set consists out of a command line tool and a very barebones editor. There is still a lot of work that needs to happen if we want to make these tools up to production standards but for now they suffice. We hope that this post has stilled your needs to know about our awesome tools. Next week our producer will give an overall update of the project so look forward to that!&lt;/p&gt;
+</description>
     </item>
     
   </channel>

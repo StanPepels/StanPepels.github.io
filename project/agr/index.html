@@ -61,13 +61,10 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
   <meta property="og:site_name" content="Stan Pepels">
   <meta property="og:url" content="/project/agr/">
   <meta property="og:title" content="AGR | Stan Pepels">
-  <meta property="og:description" content=""><meta property="og:image" content="/img/headers/voodoo-engine.png">
+  <meta property="og:description" content=""><meta property="og:image" content="/img/headers/agr.png">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2016-04-27T00:00:00&#43;00:00">
@@ -188,7 +185,7 @@
 
     
 <div class="article-header">
-  <img src="/img/headers/voodoo-engine.png" class="article-banner" itemprop="image">
+  <img src="/img/headers/agr.png" class="article-banner" itemprop="image">
   
 </div>
 
@@ -207,7 +204,7 @@
             
             
             <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 1 / 5</div>
+                <div class="numbertext"> 1 / 6</div>
                 
                 <div class="videoWrapper">
                     <iframe width="100%" height="auto"
@@ -219,7 +216,17 @@
             
             
             <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 2 / 5</div>
+                <div class="numbertext"> 2 / 6</div>
+                
+                <img src="/slideshows/agr/engine%20logo.png" style="width:100%">
+                
+                
+            </div>
+            
+            
+            
+            <div class="mySlides slideshow_fade">
+                <div class="numbertext"> 3 / 6</div>
                 
                 <img src="/slideshows/agr/trinh_track.png" style="width:100%">
                  <div class="text">Track by Trinh Nguyen</div>
@@ -229,7 +236,7 @@
             
             
             <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 3 / 5</div>
+                <div class="numbertext"> 4 / 6</div>
                 
                 <img src="/slideshows/agr/promo_art1.png" style="width:100%">
                  <div class="text">Promo art by Michiel van Ommen</div>
@@ -239,7 +246,7 @@
             
             
             <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 4 / 5</div>
+                <div class="numbertext"> 5 / 6</div>
                 
                 <img src="/slideshows/agr/promo_art2.png" style="width:100%">
                  <div class="text">Promo art by Michiel van Ommen</div>
@@ -249,7 +256,7 @@
             
             
             <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 5 / 5</div>
+                <div class="numbertext"> 6 / 6</div>
                 
                 <img src="/slideshows/agr/promo_art3.png" style="width:100%">
                  <div class="text">Promo art by Michiel van Ommen</div>
@@ -273,13 +280,15 @@
             
             <span class="dot" onclick="currentSlide( 4 )"></span>
             
+            <span class="dot" onclick="currentSlide( 5 )"></span>
+            
         </div>
         
 
 
         <div>
             <h2>Summary</h2>
-            Voodoo engine is a game engine specifically tailored for antigrav racing games. It uses maya as a level-editor combined with houdini tools to streamline the development of new racing tracks.
+            AGR is a anti-grav racing game build with the custom Voodoo Engine. The engine was tailored to handle anti-gra racing games specifically and uses maya as a level-editor combined with houdini tools to streamline the development of new racing tracks. It is also cross platform (PC / PS4)
             
         </div>
         <div class="container">
@@ -288,13 +297,13 @@
                     <h2>Responsibilities</h2>
                     <ul>
                         
+                        <li>Maya c&#43;&#43; plugin for exporting levels</li>
+                        
                         <li>PS4 / Win32 input</li>
                         
                         <li>PhysX implementation</li>
                         
                         <li>Gameplay features</li>
-                        
-                        <li>Maya c&#43;&#43; plugin for exporting levels</li>
                         
                     </ul>
                 </div>
@@ -412,7 +421,60 @@
         <div class="article-style" itemprop="articleBody">
 
             <h2>Details</h2>
-            
+            <p><div style="float: right; position: relative; width: 40%;">
+    <div>
+        <img src="/img/AGR/Maya%20engine%20attributes.png" style="display: block;
+  width: 100%;
+             
+             margin: 2% 0% 0% 0%;"/>
+                                      
+    </div>
+    
+    <div style="text-align: center; font-size: 70%; margin-bottom: 0%;">Custom attributes added to a maya root object</div>
+    
+</div>
+<strong>Maya C++ plugin</strong> My main work on this project was done on the maya plugin. When this plugin is installed together with the houdini tools our artists provided it would extend maya by giving objects extra attributes.
+These attributes are engine features such as collsion shapes / dimensions, setting collision layers, setting the object types etc. Besides this it came with an exporter. This would use the houdini tools to generate the collision mesh and
+visual mesh of the track. This would also generate all the wapoints used by the lap system in the engine. In order to allow for jumps a designer could create multiple &lsquo;tracks&rsquo; in the same level and link them up using the maya node editor.</p>
+
+<p>The export has 2 settings, Debug and Release. Debug would use the collision mesh as its visual mesh thus reducing the export time by a lot.
+In order to speed up export even more the export was multithreaded since the amount of vertices put out by houdini could be a lot depending on the houdingi tool settings the designer used
+(before multithreading a release export could take up to 2.5 min with 3.3 milion vertices. After the multithreding the same export took 41 seconds).
+The outputted file is a binary file that could be fed directly to the engine.
+<div style="float: right; position: relative; width: 100%;">
+    <div>
+        <img src="/img/AGR/May-nodes.png" style="display: block;
+  width: 100%;
+             
+             margin: 0% 0% 0% 0%;"/>
+                                      
+    </div>
+    
+    <div style="text-align: center; font-size: 70%; margin-bottom: 3%;">Multiple track parts could be linked up to create one coherent track. This allowed for jumps and splits. The voodoo track nodes were created by the plugin and would take a houdini tool object as input.</div>
+    
+</div></p>
+
+<p><strong>Input:</strong> For the input I wrote an interface that works cross platform for both PC and PS4 allthough the game could only be played using a controller. On windows I used Xinput for handling controller support. The mouse and keyboard were used to tweak the game with ImGui
+The interfaced followed the listener pattern. That is to say in order to recieve input an object had to be registered with a single input processing system.</p>
+
+<p><div style="float: right; position: relative; width: 40%;">
+    <div>
+        <img src="/gifs/physX%20debugger.gif" style="display: block;
+  width: 100%;
+             
+             margin: 0% 0% 0% 0%;"/>
+                                      
+    </div>
+    
+    <div style="text-align: center; font-size: 70%; margin-bottom: 0%;">The PhysX debugger could be used to debug the physics scene.</div>
+    
+</div>
+<strong>PhysX:</strong> Our physX implementation exposed most of the physx functionalities. Such as collision filtering and raycasts. It would also send out callback in a unity style interface but then written in C++. All most common collision shapes where supported
+i.e. Capsule, Sphere, Box, Mesh, Convex hull and height maps. In debug mode the PhysX visual debugger could be attached to view and debug the physics scene.</p>
+
+<p><strong>Gameplay Features:</strong> With regards to gameplay I was responsible for one of the easrly iterations of the vehicle behaviour. Besides that, I also worked on the lap system that was build in the engine and on the differnt object types that are available in the engine.
+We did not use an entity component system like unity because of time constraints and the spefic target game of the engine could do without.</p>
+
         </div>
 
         <p class="project-download">

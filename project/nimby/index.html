@@ -61,9 +61,6 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
   <meta property="og:site_name" content="Stan Pepels">
   <meta property="og:url" content="/project/nimby/">
   <meta property="og:title" content="NIMBY | Stan Pepels">
@@ -222,7 +219,7 @@
                 <div class="numbertext"> 2 / 4</div>
                 
                 <img src="/slideshows/nimby/menu.jpg" style="width:100%">
-                 <div class="text">first test img</div>
+                
                 
             </div>
             
@@ -232,7 +229,7 @@
                 <div class="numbertext"> 3 / 4</div>
                 
                 <img src="/slideshows/nimby/screenshot1.jpg" style="width:100%">
-                 <div class="text">first test img</div>
+                
                 
             </div>
             
@@ -242,7 +239,7 @@
                 <div class="numbertext"> 4 / 4</div>
                 
                 <img src="/slideshows/nimby/screenshot2.jpg" style="width:100%">
-                 <div class="text">first test img</div>
+                
                 
             </div>
             
@@ -267,7 +264,7 @@
 
         <div>
             <h2>Summary</h2>
-            test
+            NIMBY (Not In My Back Yard) Is a game about angry neigbours trying to keep their backyards free of leaves. The goal of the game is to try and get your garden as clean as possible whilest trying to get your other neighbours garden filled with leaves. This game was part of the global game ham 2017 and the theme was &#39;waves&#39;.
             
         </div>
         <div class="container">
@@ -370,10 +367,20 @@
         <div class="article-style" itemprop="articleBody">
 
             <h2>Details</h2>
-            
+            <p><strong>Leaf Spawing:</strong> For the leaf spawing I made a script that would spawn leaves at a random position in a circle. The script allowed the designers to tweak the spawnrate of the leaves. Besides the spawnrate it was
+also posible to restrict the spawning to a querter cirel, a half circle and a three quarter circle. It was also possible to specify a minumum radius thus spwning leaves in adunot shape.Each level also had a spawner manager.
+This object would controll all spawners to make sure that the maximum amount of spawned leaves on the entire field would not exceed a certain threshold.</p>
+
+<p><strong>Leaf behaviour / leaf blower:</strong> The leaf behaviour was done by appling a velocity based on the angle between the player forward vector and the vector from the leaf to the player. Also the closer the player
+to the leaf the higher the magnitude of the force. A random rotation was also applied to the leaf to make a bit more visually appealing.</p>
+
         </div>
 
         <p class="project-download">
+            
+            <a href="/builds/Nimby.zip" class="btn btn-primary btn-outline" download="">
+                Download
+            </a>
             
         </p>
     </div>

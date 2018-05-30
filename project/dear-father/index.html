@@ -61,9 +61,6 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
   <meta property="og:site_name" content="Stan Pepels">
   <meta property="og:url" content="/project/dear-father/">
   <meta property="og:title" content="dear father | Stan Pepels">
@@ -378,12 +375,24 @@
         <div class="article-style" itemprop="articleBody">
 
             <h2>Details</h2>
-            
+            <p><strong>Dialogue tree tool:</strong> Most of my work during this short project went towards creating a tool for the designers to implement their dialogues. The descision to make a tool
+in such a short term project came from the fact that this entire game is based on dialogues. The dialogue tree itself is an extension of unreals behaviour trees.
+We made a couple of custom nodes.
+<ul>
+<li>The first node was a <strong>decorator</strong>. This decorator holds a question to be displayed and some possible answers. Each answer can be assigned points or an animation.</li>
+<li>The second custom node was an <strong>action</strong> namely the wait for answer node. As the name suggests this would pause the tree and wait for the user to select an answer. </li>
+<li>The final node is another <strong>action</strong>. This final node would stop the conversation.</li>
+</ul>
+When constructing a dialogue tree the designer would use a selector node(provided by unreal) and place the dialogue decorator on it. The next step for the designer
+would be to fill in the decorator fields. After the decorater was set the designers would create the wait for answer action and create more selector nodes
+(1 node for each answer). In the decorator the answers are numberd from 0 to N. In the tree the next nodes would be red from left to right thus answer 0 would move to the
+left most node. This process would then be repeated to build the entire dialogue.</p>
+
         </div>
 
         <p class="project-download">
             
-            <a href="/files/test" class="btn btn-primary btn-outline" download="">
+            <a href="/builds/DearFather.zip" class="btn btn-primary btn-outline" download="">
                 Download
             </a>
             

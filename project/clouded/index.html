@@ -61,9 +61,6 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
   <meta property="og:site_name" content="Stan Pepels">
   <meta property="og:url" content="/project/clouded/">
   <meta property="og:title" content="clouded | Stan Pepels">
@@ -267,7 +264,7 @@
 
         <div>
             <h2>Summary</h2>
-            Clouded is a 2 week long project build using the HTC vive. The game revolves around manipulating clouds in order to manage the world state untill the specific conditions are met. The game was build using unity3D using the htc vive.
+            Clouded is a 2 week long project build using the HTC vive. The game revolves around manipulating clouds in order to manage the world state untill the specific conditions are met. The game was build using unity3D and the htc vive.
             
         </div>
         <div class="container">
@@ -280,7 +277,7 @@
                         
                         <li>controller input</li>
                         
-                        <li>menu flow</li>
+                        <li>UI implementation</li>
                         
                     </ul>
                 </div>
@@ -368,12 +365,24 @@
         <div class="article-style" itemprop="articleBody">
 
             <h2>Details</h2>
-            
+            <p><strong>Cloud behaviour:</strong> The movement of the cloud was achieved using a vector field. This field is then manipulated by holding a button on the HTC controller and dragging it around.
+In order to smooth out the movement a simple box blurr is applied to the vector field.</p>
+
+<p>The creation of rain and thunderstrom clouds was done by using simple spatial partitioning. The cloud layer would be divided into a grid and all small cloud particles would be inserted in this grid. The depending on
+the density of a grid cell the alogrithm would start checking its neighbours. If the neighbours also exceeded the density threshold they would be added to a list and the same would be done for the new found cells. At the end the bounding box of all
+neighbouring cells would be big enough all particles would be removed and a rain cloud would be created. Depending on the amount of particles removed the rain would be more severe or last longer.
+For dry areas the same algorithem could be used but except for checking if a cell exceeds a value, I would check if the density was below a specified value.</p>
+
+<p><strong>Controller input / UI:</strong> For controller input there are only 2 buttons used. The trigger on the back of the controller is used to manipulate the cloud movment. The circular touchpad
+is used to navigate the menus. The reason for using the touchpad for menus is that it comes close to using a mouse. When you put your thumb on the touchpad a small sphere is displayed on the menu.
+This sphere indicated your thumb position on the touchpad. By then moving your thumb over the touchpad the sphere would move across the menu and you can select something by clicking the youchpad. This gave
+some intuitive controls to menus that did not require any pointing a laser at a plane.</p>
+
         </div>
 
         <p class="project-download">
             
-            <a href="/files/test" class="btn btn-primary btn-outline" download="">
+            <a href="/test" class="btn btn-primary btn-outline" download="">
                 Download
             </a>
             

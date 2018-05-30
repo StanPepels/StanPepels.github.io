@@ -61,9 +61,6 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
   <meta property="og:site_name" content="Stan Pepels">
   <meta property="og:url" content="/project/orbis/">
   <meta property="og:title" content="orbis | Stan Pepels">
@@ -279,7 +276,7 @@
 
         <div>
             <h2>Summary</h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Orbis is a game where you use a custom bowlingball controller to try and knock your opponents out of the arena. The game was made in 2 weeks using unity 3D
             
         </div>
         <div class="container">
@@ -382,12 +379,17 @@
         <div class="article-style" itemprop="articleBody">
 
             <h2>Details</h2>
-            
+            <p><strong>Controller:</strong> The main responsibility with the controller that I had was do the input. The main issue that we faced with the input was that we needed to capture the seperate input from multiple mice.
+This was achieved with help a third party library. Besides doing the input I also had a hand in building the actual controller.</p>
+
+<p><strong>Gameplay:</strong> Regarding gameplay I did the &lsquo;bumping behaviour&rsquo; and the audio implementation. The bumping was only in affect if your velocity would align with the collision normal. Then by projecting the velocity onto the collision normal
+I would determain the total amount of force used to bumb the other player away. The player would also be immume to bumping until it has touched down on the platform. This was done to prevent spawn camping.</p>
+
         </div>
 
         <p class="project-download">
             
-            <a href="/files/test" class="btn btn-primary btn-outline" download="">
+            <a href="/builds/Orbis.zip" class="btn btn-primary btn-outline" download="">
                 Download
             </a>
             

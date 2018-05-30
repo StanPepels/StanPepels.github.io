@@ -61,9 +61,6 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
   <meta property="og:site_name" content="Stan Pepels">
   <meta property="og:url" content="/post/tools-for-fools/">
   <meta property="og:title" content="Tools for fools | Stan Pepels">
@@ -188,34 +185,86 @@
 
   <div class="article-container">
     <div class="pub-title">
-      <h1 itemprop="name">Tools for fools</h1>
+      <h1 itemprop="name">
+        Tools for fools
+      </h1>
+        
+      <p class="view-all">
+
+        <a href="https://projectsulphur.com/blog?filename=2018-01-26T16_59_42.465Z" target="_blank">
+          >> original post
+        </a>
+      </p>
+        
       <span class="pub-authors" itemprop="author">&nbsp;</span>
     </div>
 
-    
-
-    
-
-    <div>
-        <h2>Summary</h2>
-        A quick update on tools current status for project sulphur 
-
-    </div>
-      
-      <div>
-        <h2>What I worked on</h2>
-        <ul>
-            
-        </ul>
-    </div>
-    <h2>Details</h2>
-    <div class="article-style" itemprop="articleBody">
-      
-    </div>
-
-      <p class="project-download">
-          
+    <p>
+      Authors: Stan Pepels, Timo van Hees, Maarten ten Velden
       </p>
+    <div class="article-style" itemprop="articleBody">
+      <h2 id="introduction">Introduction</h2>
+
+<p>First of all I have to apologise for being a week late with this post. You would all get a cookie if I knew how to get it to you <em>(Editor note: No rights can be deduced from this statement)</em>, but I don’t, so… Without further ado, let’s do this.</p>
+
+<p>Welcome to the most interesting and important update of them all, the tools update! We hope to inform you guys on the current status of our intuitive asset pipeline. We’ll cover the new features that come with our tools and give a quick showcase on how to use them.</p>
+
+<h2 id="what-is-this-asset-pipeline-you-speak-of">What is this asset pipeline you speak of?</h2>
+
+<p>The way most people will see the asset pipeline is through its user-friendly command line interface. Looks can be deceiving, as this seemingly simple tool is in fact very powerful. If you’re used to other command line tools you’ll know they are a pain to use. Unfortunately, this one is not much different but we tried to make it as streamlined as possible.</p>
+
+<p>First let me explain the main goal of the tool and why we need it. Its main goal is to take raw assets created in software such as Maya and convert them to a game ready format.</p>
+
+<h2 id="so-why-do-we-need-to-convert-assets">So why do we need to convert assets?</h2>
+
+<p>Well, the main reason is that certain file types are faster to read and / or take up less space on your disk. Of course having minute long load times or gigabyte size downloads are not on our wishlist. So in order to convert the raw files we build a tool that converts the assets for you because unless you are some kind of robot, it will take you ages to convert the files by hand.</p>
+
+<p>With that quick explanation out of the way let’s talk about how to use this tool and what features it supports.
+We already support a bunch of the most common formats, such as
+- the <strong>.fbx</strong> and <strong>.obj</strong> model formats,
+- the <strong>.png</strong>, <strong>.jpeg</strong>, <strong>.bmp</strong>, <strong>.dds</strong> and <strong>.tga</strong> (HDR is still being worked on) texture formats,
+- and shaders written in the <strong>High Level Shader Language</strong> (HLSL)</p>
+
+<p>You use the tool by running it from the command line or by running the sulphur-builder.exe directly and type commands in the window that opens. Doing it via the .exe gives you a few more options such as setting the working directory.</p>
+
+<p><img src="http://projectsulphur.com/blog-media/asset_convertor.gif" alt="Gif of the current editor" /></p>
+
+<h2 id="so-it-s-all-done-via-commands">So it’s all done via commands?</h2>
+
+<p>Well no, not anymore. For the first 6 weeks you had to use the command line tool as explained above. But at long last, we’ve finally started on an actual editor. This editor implements the asset pipeline via a nice GUI where you can simply drag and drop your files which then get converted immediately. In addition to this, the editor gives you the ability to manage your workspace folder structure and also allows you to view the assets in the engine via the scene view.</p>
+
+<p><img src="https://projectsulphur.com/blog-media/editor.gif" alt="Gif of the current editor" /></p>
+
+<h2 id="a-few-technical-nitbits">A few technical nitbits</h2>
+
+<p>For starters, our materials are shader based. These shaders are automatically compiled for all three of our rendering APIs. In other words, a 300% productivity boost! You know what else kills your productivity? Having to restart the engine when it crashes <s><em>(*cough* UE4 *cough*)</em></s>. Well worry no more. Our editor and engine are completely separate applications communicating over the network. So next time you are running your broken rotation script, your work is safe! The editor will automatically recover, which is lightning-fast because all assets are shared.</p>
+
+<h2 id="future-features">Future features</h2>
+
+<p>Next to all the features mentioned above there is still a lot left to do. We would like to support a lot more assets than just textures, models and shaders. We also need to do a lot of work on the editor before its ready.</p>
+
+<p>For the asset pipeline the following is planned to be supported:
+- Scripts
+- Audio files
+- Proper texture processing like compression
+- HDR textures
+- Support for the all new GL Transmission Format (GLTF)
+- Fonts</p>
+
+<p>And for the editor the awesome things you can look forward to seeing are:
+- Gizmos
+- A hierarchy viewer
+- A material property editor
+- Project saving/loading
+- World saving/loading
+- Playback controls for the Sulphur Rewinder™ (more info on that soon)</p>
+
+<h2 id="recap">Recap</h2>
+
+<p>So to quickly recap: Our current tool set consists out of a command line tool and a very barebones editor. There is still a lot of work that needs to happen if we want to make these tools up to production standards but for now they suffice. We hope that this post has stilled your needs to know about our awesome tools. Next week our producer will give an overall update of the project so look forward to that!</p>
+
+    </div>
+
   </div>
 </article>
 

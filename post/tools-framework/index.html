@@ -61,9 +61,6 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
   <meta property="og:site_name" content="Stan Pepels">
   <meta property="og:url" content="/post/tools-framework/">
   <meta property="og:title" content="Choosing a framework for tool development | Stan Pepels">
@@ -188,34 +185,170 @@
 
   <div class="article-container">
     <div class="pub-title">
-      <h1 itemprop="name">Choosing a framework for tool development</h1>
+      <h1 itemprop="name">
+        Choosing a framework for tool development
+      </h1>
+        
+      <p class="view-all">
+
+        <a href="https://projectsulphur.com/blog?filename=2017-09-28T13_55_27.602Z" target="_blank">
+          >> original post
+        </a>
+      </p>
+        
       <span class="pub-authors" itemprop="author">&nbsp;</span>
     </div>
 
-    
-
-    
-
-    <div>
-        <h2>Summary</h2>
-        Read about the research done on the different kind of UI frameworks out there
-
-    </div>
-      
-      <div>
-        <h2>What I worked on</h2>
-        <ul>
-            
-        </ul>
-    </div>
-    <h2>Details</h2>
-    <div class="article-style" itemprop="articleBody">
-      
-    </div>
-
-      <p class="project-download">
-          
+    <p>
+      Authors: Stan Pepels
       </p>
+    <div class="article-style" itemprop="articleBody">
+      <h2 id="introduction">Introduction</h2>
+
+<p>One of the first decisions to make when thinking about building a toolset is what framework you are going to use. Since there are quite a few options out there it can be a pretty hard decision as to what framework you’d want to go for. Every framework comes with its pros and cons. When I was deciding which framework to use I selected the following candidates:
+<ol>
+<li><b>ATF:</b> On paper, this framework looks perfect for our needs. It’s build upon WinForms C# and is built specifically for developing game development tools. Besides this, it’s documentation seems to very extensive.</li></p>
+
+<p><li><b>QT:</b> QT is a C   library for creating UI applications. A lot of good apps have been created using QT which proves it capabilities. Another big plus is of course that it’s written in C  , a language I’m familiar with and gives a lot of low level control and speed.</li></p>
+
+<p><li><b>WPF:</b> WPF (Windows Presentation Foundation) is the successor of WinForms and, like WinForms, it’s build upon the .NET framework and written in C#. It also uses xaml as a mark-up language and was built to have better performance than WinForms.</li>
+</ol>
+My goal was to get an external renderer working in all frameworks and see which one was the easiest to implement.</p>
+
+<h2 id="atf">ATF</h2>
+
+<p>One thing I soon discovered when working with ATF is that it’s no longer as well maintained as it used to be. In the first place, it’s no longer being developed by Sony WWS. Secondly, the open forums are deserted with the most recent post originating from 2015. This wouldn’t be a problem if the framework itself wasn’t hard to learn. But as it turns out, it has a very steep learning curve. These things combined made it hard to get anything working properly. And besides this, there are a few other quirks that make this framework worse than when I initially heard about it. Here are a few of the other things that hindered my development:</p>
+
+<ol>
+<li>    It’s based on WinForms, but how the use WinForms is unclear.</li>
+<li>    It has a lot of third party dependencies (13 in total if you choose to use all available modules).</li>
+<li>    The samples are unclear as to what they do and how systems talk to each other.</li>
+</ol>
+
+<p><i>Summary:</i>
+<table>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr></p>
+
+<p><tr>
+<td>Mature codebase</td>
+<td>It has a very steep learning curve</td>
+</tr></p>
+
+<p><tr>
+<td>It’s very flexible (MEF based)</td>
+<td>It’s no longer under active development</td>
+</tr></p>
+
+<p><tr>
+<td>It comes with a lot of basic features</td>
+<td>It’s no longer supported by sony</td>
+</tr></p>
+
+<p><tr>
+<td>ports both WPF and (WinForms although it’s main focus is WinForms)</td>
+<td>It can be hard to debug if you are new to the system because of all the abstraction layers </td>
+</tr></p>
+
+<p><tr>
+<td></td>
+<td>A lot of third party dependencies</td>
+</tr></p>
+
+<p><tr>
+<td></td>
+<td>Written in C# thus interoperation code will be required</td>
+</tr>
+</table></p>
+
+<h2 id="qt">QT</h2>
+
+<p>QT is a very large library with lots of functionality. It also took me considerably less effort to get my test working (approximately 4 hours). The interface looks well developed and understandable and the result is pretty good. The main downside however lies with one of its strengths. Because it’s such a vast library it can be quite hard to find the right class/system for the job. It might also be too large for what I need.</p>
+
+<p><i>Summary:</i></p>
+
+<table>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+
+<tr>
+<td>Written in C  </td>
+<td>Not tailored to game development specifically</td>
+</tr>
+
+<tr>
+<td>Under active development/well maintained</td>
+<td>Because it’s such a big library it can be hard to find the right information</td>
+</tr>
+
+<tr>
+<td>Lots and lots of functionality</td>
+<td></td>
+</tr>
+
+</table>
+
+<h2 id="wpf">WPF</h2>
+
+<p>WPF is as bare bones as it gets. It only has a minimal amount of controls to start off with but the most important things are there. It’s also relatively easy to create your own controls/systems to suit your needs. It took me approximately 3 hours to get my sample working using WPF which was a pleasant surprise. WPF is written in C#, giving you a bit more control over directory operations which is nice when creating an editor.</p>
+
+<p><i>Summary:</i></p>
+
+<table>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+
+<tr>
+<td>Its newer than WinForms</td>
+<td>Almost everything has to be built from scratch</td>
+</tr>
+
+<tr>
+<td>Clear distinction between mark-up and behaviour</td>
+<td>Written in C# thus interoperation code will be required</td>
+</tr>
+
+<tr>
+<td>Easy to create new controls</td>
+<td>Not yet many third party controls available</td>
+</tr>
+
+<tr>
+<td>Lots of controllability</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Build around data binding</td>
+<td></td>
+</tr>
+
+</table>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><p>
+Looking back at the pros and cons of all three frameworks it becomes clear that there are 2 main contenders, namely <b>QT</b> and <b>WPF</b>. On one hand QT is built in C   which is fast. QT also has lots of out of the box functionality. WPF on the other hand offers lots of control and an easy to understand interface.
+In the end, I decided to go with WPF since I have the time to develop the tools and the controllability is really tempting. Choosing for WPF will also keep my dependencies to a minimum (at the cost of some overhead that comes with C# and the .NET framework). One downside is the requirement of writing an interoperation layer. But since we decided that the editor will be a separate process from the engine this would also be required with a C   application (albeit slightly less work).
+</p>
+ </p>
+
+<h2 id="further-reading">Further reading</h2>
+
+<p><b>ATF:</b> <a href="https://github.com/SonyWWS/ATF/wiki">https://github.com/SonyWWS/ATF/wiki</a></p>
+
+<p><b>WPF:</b> <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/index">https://docs.microsoft.com/en-us/dotnet/framework/wpf/index</a></p>
+
+<p><b>QT:</b> <a href="https://www.qt.io/">https://www.qt.io/</a></p>
+
+    </div>
+
   </div>
 </article>
 
