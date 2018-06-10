@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="author" content="Stan Pepels">
+  <meta name="description" content="Game Tools / Engine programmer">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/project/custom-physics/">
+
+  
+  
+
+
+  
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Stan Pepels">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Stan Pepels">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/project/custom-physics/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Stan Pepels">
+  <meta property="og:url" content="/project/custom-physics/">
+  <meta property="og:title" content="Custom physics | Stan Pepels">
+  <meta property="og:description" content=""><meta property="og:image" content="/img/headers/physics.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2016-04-27T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2016-04-27T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>Custom physics | Stan Pepels</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Stan Pepels</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+  
+<div class="article-header">
+  <img src="/img/headers/physics.png" class="article-banner" itemprop="image">
+  
+</div>
+
+
+
+  <div class="article-container">
+    <div class="pub-title">
+      <h1 itemprop="name">Custom physics</h1>
+      <span class="pub-authors" itemprop="author">&nbsp;</span>
+    </div>
+
+    
+    <div class="slideshow-container">
+      
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 1 / 5</div>
+        
+        <div class="videoWrapper">
+          <iframe width="100%" height="auto"
+                  src="https://www.youtube.com/embed/uRGFNVNitGA"></iframe>
+        </div>
+         <div class="text">Showing off convex hull collision with a couple of radom shapes.</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 2 / 5</div>
+        
+        <div class="videoWrapper">
+          <iframe width="100%" height="auto"
+                  src="https://www.youtube.com/embed/xzY0P-R7oCc"></iframe>
+        </div>
+         <div class="text">Showing off the broad-phase quadtrees.</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 3 / 5</div>
+        
+        <div class="videoWrapper">
+          <iframe width="100%" height="auto"
+                  src="https://www.youtube.com/embed/DPVX_-H7Mt0"></iframe>
+        </div>
+         <div class="text">For the game we build with the physics engine I made a simple level editor.</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 4 / 5</div>
+        
+        <div class="videoWrapper">
+          <iframe width="100%" height="auto"
+                  src="https://www.youtube.com/embed/uZTGTnKbhN0"></iframe>
+        </div>
+         <div class="text">The physics engine came with a collider editor.</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 5 / 5</div>
+        
+        <div class="videoWrapper">
+          <iframe width="100%" height="auto"
+                  src="https://www.youtube.com/embed/ZitLJ2AqpX4"></iframe>
+        </div>
+         <div class="text">The physics engine had a small suite of debug tools.</div>
+        
+      </div>
+      
+      
+      <a class="prev_btn" id="slideshow_btn" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next_btn" id="slideshow_btn" onclick="plusSlides(1)">&#10095;</a>
+      
+    </div>
+    <div style="text-align:center">
+      
+      <span class="dot" onclick="currentSlide( 0 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 1 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 2 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 3 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 4 )"></span>
+      
+    </div>
+    
+
+    
+    <a class="snippet-toggle btn btn-primary btn-large active" onclick="toggleSnippets()">code snippets</a>
+    <div class="snippet-container">
+      <div class="slideshow-container">
+        
+        
+        
+        
+        <div class="snippet slideshow_fade">
+          <div class="numbertext"> 1 / 2</div>
+          <div class="codesnippet">
+            <pre><code class="cpp">
+        ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class CollisionCheck : ScriptableObject {
+
+    struct Edge
+    {
+        public float Distance;
+        public Vector2 Normal;
+        public int index;
+        public Vector2 Start;
+        public Vector2 End;
+    }
+
+    // struct for contactpoints in the manifold
+    public struct Contact_Point
+    {
+        public Vector2[] WorlCoords;
+        public Vector2[] LocalCoords;
+        public Vector2 Normal;
+        public Vector2 Tangent;
+        public float Penetration;
+        public bool persistent;
+
+        // contructor
+        Contact_Point(bool per)
+        {
+            WorlCoords = new Vector2[2];
+            LocalCoords = new Vector2[2];
+            Normal = Vector2.zero;
+            Tangent = Vector2.zero;
+            Penetration = 0.0f;
+            persistent = per;
+        }
+
+        // set contactpoint to be persistent
+        public void SetPersistent(bool value)
+        {
+            persistent = value;
+        }
+    }
+
+    // list that will contain all generated contact manifolds
+    public List&lt;Manifold&gt; contacts = new List&lt;Manifold&gt;(); 
+
+    List&lt;Vector2[]&gt; ConvexPoints = new List&lt;Vector2[]&gt;();
+    Manifold contact = new Manifold();
+    Contact_Point contact_point = new Contact_Point();
+    Vector2[] Simplex = new Vector2[3];
+    ColliderBase Object_A;
+    ColliderBase Object_B;
+    rigidBody _Body_1;
+    rigidBody _Body_2;
+    int SimplexSize = 0;
+
+    public void SetColliders(ColliderBase obj_A, ColliderBase obj_B)
+    {
+        Object_A = obj_A;
+        Object_B = obj_B;
+        _Body_1 = obj_A._body;
+        _Body_2 = obj_B._body;
+    }
+
+    
+    public bool Collision(Manifold manifold = null)
+    {
+        // if both objects have inf mass don&#39;t check for collisions
+        if (_Body_1 != null &amp;&amp; _Body_2 != null)
+        {
+            if ((_Body_1.Mass == float.PositiveInfinity
+                &amp;&amp; _Body_2.Mass == float.PositiveInfinity))
+                return false;
+        }
+
+        if (Object_A._obj == Object_B._obj)
+            return false;
+
+        if (!CheckCollision())
+        {
+            if(manifold != null &amp;&amp; manifold.IsTrigger)
+            {
+                TriggerExit(Object_B, Object_A);
+                TriggerExit(Object_A, Object_B);
+            }
+            return false;
+        }
+        else
+        {
+            // if we are rechecking the collision add the new contactpoint to the manifold and manage it
+            // if it is a new collision add the contactpoint to a new manifold and add that manifold to the list
+            if (manifold != null)
+            {
+                if (manifold.IsTrigger)
+                {
+                    if (manifold.Collider_A.IsTrigger)
+                        TriggerStay(manifold.Collider_B, manifold.Collider_A);
+
+                    if (manifold.Collider_B.IsTrigger)
+                        TriggerStay(manifold.Collider_A, manifold.Collider_B);
+                    return true;
+                }
+
+                else
+                {
+                    // get the additional contact data if we found out that objects are colliding
+                    GetAdditionalContactData();
+                    // validate previous contact points
+                    manifold.Validate();
+                    // add the new contactpoint
+                    manifold.AddContact(contact_point);
+                    // keep the most relevant points
+                    manifold.Manage();
+
+                    OnCollision(Object_A, Object_B);
+                    OnCollision(Object_B, Object_A);
+                    return true;
+                }
+            }
+            else
+            {
+                // if one of the colliders is a trigger than the manifold is a trigger manifold s we don&#39;t have to resolve it
+                if (!Object_A.IsTrigger &amp;&amp; !Object_B.IsTrigger)
+                {
+                    // get the additional contact data if we found out that objects are colliding
+                    GetAdditionalContactData();
+                    AddManifold(contact_point);
+                }
+                else
+                {
+                    AddManifold(contact_point, true);
+                    TriggerEnter(Object_B, Object_A);
+                    TriggerEnter(Object_A, Object_B);
+                }
+                return true;
+            }
+        }
+    }
+
+    public bool CheckCollision()
+    {
+        SimplexSize = 0;
+        Simplex = new Vector2[3];
+        Vector2 direction = Object_A._obj.transform.position - Object_B._obj.transform.position;
+
+        // calc support point and add it as first point i our simplex
+        Simplex[0] = SupportPoint(direction);
+        SimplexSize&#43;&#43;;
+        // negate search direction
+        direction = -direction;
+
+        //2D GJK
+        while (true)
+        {
+            // add point to simplex searched in the direction calculated at the end of the loop
+            Simplex[SimplexSize] = SupportPoint(direction);
+            SimplexSize&#43;&#43;;
+
+            // check if last added point in simplex passed the origin if not than the simplex will never contain the origin and thus there is no collision
+            if (Vector2.Dot(Simplex[SimplexSize - 1], direction) &lt;= 0.0f)
+            {
+                return false;
+            }
+
+            // if it does pass the point check if the simplex contains the origin
+            // if so then there is collision if not repeat process
+            else
+            {
+                if (OriginInSimplex(ref direction))
+                {
+                    return true;
+                }
+            }
+        }
+    }
+
+    // check if the simplex contains the origin
+    bool OriginInSimplex(ref Vector2 Direction)
+    {
+        Vector2 Point_A = Simplex[SimplexSize - 1];
+        // direction point A to origin
+        Vector2 PointToOrigin = -Point_A;
+
+        switch (SimplexSize)
+        {
+            // simplex is a line
+            case 2:
+                {
+                    Vector2 point_B = Simplex[0];
+                    Vector2 AB = point_B - Point_A;
+
+                    Vector2 Normal = new Vector2(-AB.y, AB.x);//Vector3.Cross(Vector3.Cross(AB, PointToOrigin), AB);
+
+                    Direction = Normal;
+                    if (Vector2.Dot(Direction, PointToOrigin) &lt; 0.0f)
+                    {
+                        Direction = -Direction;
+                    }
+                    return false;
+                }
+            // simplex is a triangle
+            case 3:
+                {
+                    // check if point is in triangle 
+                    Vector2 Point_B = Simplex[1];
+                    Vector2 Point_C = Simplex[0];
+
+                    Vector2 AB = Point_B - Point_A;
+                    Vector2 AC = Point_C - Point_A;
+
+                    // direction perpendicular to AB
+                    Direction = new Vector2(-AB.y, AB.x);//Vector3.Cross(Vector3.Cross(AB, PointToOrigin), AB);
+
+                    // find on what side of AB the origin is and set seach direction to that direction
+                    if (Vector2.Dot(Direction, Point_C) &gt; 0.0f)
+                    {
+                        Direction = -Direction;
+                    }
+
+                    // check if C is furthest point in origin direction
+                    if (Vector2.Dot(Direction, PointToOrigin) &gt; 0.0f)
+                    {
+                        // remove point C and find a new point A
+                        Simplex[0] = Point_B;
+                        Simplex[1] = Point_A;
+                        SimplexSize--;
+                        return false;
+                    }
+
+                    // direction perpendicular to AC
+                    Direction = new Vector3(-AC.y, AC.x);//Vector3.Cross(Vector3.Cross(AC, PointToOrigin), AC);
+
+                    if (Vector2.Dot(Direction, Point_B) &gt; 0.0f)
+                    {
+                        Direction = -Direction;
+                    }
+
+
+                    if (Vector2.Dot(Direction, PointToOrigin) &gt; 0.0f)
+                    {
+                        // remove point B and find a new point A
+                        Simplex[0] = Point_C;
+                        Simplex[1] = Point_A;
+                        SimplexSize--;
+                        return false;
+                    }
+                    return true;
+                }
+            default:
+                return false;
+        }
+    }
+
+    // get a support point in the murkowski hull
+    Vector2 SupportPoint(Vector2 Direction)
+    {
+        Vector2 p1 = Object_A.FurthestPoint(Direction, Object_A._obj);
+        Vector2 p2 = Object_B.FurthestPoint(-Direction, Object_B._obj);
+
+        // store the points to be used for closest point calculation
+        // save all original points
+        Vector2[] temp = new Vector2[3];
+        temp[0] = p1;
+        temp[1] = p2;
+        temp[2] = p1 - p2;
+        ConvexPoints.Add(temp);
+
+        return p1 - p2;
+    }
+
+    // calculates the closest point on the simplex to the origin
+    void GetClosestPoint(Vector2[] Point_A, Vector2[] Point_B)
+    {
+        Vector2 L = Point_B[2] - Point_A[2];
+        contact_point.LocalCoords = new Vector2[2];
+        contact_point.WorlCoords = new Vector2[2];
+
+        if (L == Vector2.zero)
+        {
+            contact_point.WorlCoords[0] = Point_A[0];
+            contact_point.WorlCoords[0] = Point_A[1];
+            return;
+        }
+
+        float Labda_2 = Vector2.Dot(-L, Point_A[2]) / Vector2.Dot(L, L);
+        float Labda_1 = 1 - Labda_2;
+
+        if (Labda_1 &lt; 0)
+        {
+            contact_point.WorlCoords[0] = Point_B[0];
+            contact_point.WorlCoords[0] = Point_B[1];
+            return;
+        }
+        else if (Labda_2 &lt; 0)
+        {
+            contact_point.WorlCoords[0] = Point_A[0];
+            contact_point.WorlCoords[0] = Point_A[1];
+            return;
+        }
+
+        // contact point on body A in world coords and local coords
+        contact_point.WorlCoords[0] = Labda_1 * Point_A[0] &#43; Labda_2 * Point_B[0];
+        contact_point.WorlCoords[1] = Labda_1 * Point_A[1] &#43; Labda_2 * Point_B[1];
+
+        // convert world space to local space
+        contact_point.LocalCoords[0] = Object_A._obj.transform.worldToLocalMatrix.MultiplyPoint3x4(contact_point.WorlCoords[0]);
+        contact_point.LocalCoords[1] = Object_B._obj.transform.worldToLocalMatrix.MultiplyPoint3x4(contact_point.WorlCoords[1]);
+
+    }
+
+    Edge FindClosestEdge(ref List&lt;Vector2&gt; Simplex)
+    {
+        Edge closest = new Edge();
+        closest.Distance = float.MaxValue;
+
+        for (int i = 0; i &lt; Simplex.Count; i&#43;&#43;)
+        {
+            // calculate the next point in the simplex
+
+            // below line is the same as 
+            //
+            // if (i &#43; 1 == Simplex.Cont) 
+            // { j = i &#43; 1} 
+            // else j = 0
+            int j = i &#43; 1 == Simplex.Count ? 0 : i &#43; 1;
+
+            // set 2 vectors to the simplex points choosen
+            Vector2 a = Simplex[i];
+            Vector2 b = Simplex[j];
+
+            // get line A to B and Origin to A
+            Vector2 e = b - a;
+            Vector2 OA = a;
+
+            // get the normal from line AB
+            Vector2 normal = new Vector2(-e.y, e.x);//Vector3.Cross(Vector3.Cross(e, OA), e);
+
+            // normalize the normal
+            normal.Normalize();
+
+            float d = Vector2.Dot(normal, a);
+
+            // check if any point a is closer than the current closest point
+            if (d &lt; closest.Distance)
+            {
+                closest.Start = Simplex[i];
+                closest.End = Simplex[j];
+                // set values
+                closest.Distance = d;
+                closest.Normal = normal;
+                closest.index = j;
+            }
+        }
+        return closest;
+    }
+
+    // get additional contact data using the EPA algorithm
+    public void GetAdditionalContactData()
+    {
+        float Tolerance = 0.00005f;
+        List&lt;Vector2&gt; s = new List&lt;Vector2&gt;();
+        for (int i = 0; i &lt; 3; i&#43;&#43;)
+        {
+            s.Add(Vector2.zero);
+            s[i] = Simplex[i];
+        }
+        int j = 0;
+        while (true)
+        {
+            
+            Edge E = FindClosestEdge(ref s);
+            // add new support point with as search direction the normal from the closest edge
+            Vector2 P = SupportPoint(E.Normal);
+
+            // check if distance from P is similar to the normal if so than we found the closest edge
+            float d = Vector2.Dot(P, E.Normal);
+            j &#43;= 1;
+            if (d - E.Distance &lt; Tolerance)
+            {
+                // closest edge is made up by subbort points Simplex[i], Simplex[j]
+                // get the original points that created these support points
+                Vector2[] point_a = new Vector2[3];
+                Vector2[] point_b = new Vector2[3];
+                // search through list of calculated support point to find suport points that make up the closest edge
+                for (int x = 0; x &lt; ConvexPoints.Count; x&#43;&#43;)
+                {
+                    if (ConvexPoints[x][2] == E.Start)
+                    {
+                        point_a = ConvexPoints[x];
+                    }
+                    if (ConvexPoints[x][2] == E.End)
+                    {
+                        point_b = ConvexPoints[x];
+                    }
+                }
+
+                // get point of deepest penetration for this opject (closest points)
+                GetClosestPoint(point_a, point_b);
+
+                contact_point.Normal = E.Normal;
+                contact_point.Penetration = d;
+                // get tangets so we can resolve friction
+                contact_point.Tangent = GetTangent(contact_point);
+                ConvexPoints.Clear();
+                return;
+            }
+            else
+            {
+                // insert the support point that got closer to the origin between the points that made up the closest edge
+                s.Insert(E.index, P);
+            }
+        }
+    }
+
+    // add new manifold
+    public void AddManifold(Contact_Point point, bool Trigger = false)
+    {
+        contact = new Manifold();
+        // add contact to manifold
+        contact.AddContact(point);
+        // set the bodys that are colliding
+        contact.SetBodys(Object_A, Object_B);
+        // add manifold to list
+        contacts.Add(contact);
+
+        contact.IsTrigger = Trigger;
+    }
+
+    // get the tangent vector for linear velocity
+    public Vector2 GetTangent(Contact_Point point)
+    {
+        Vector2 rA = point.WorlCoords[0] - (Vector2)Object_A._obj.transform.position;
+        Vector2 rB = point.WorlCoords[1] - (Vector2)Object_B._obj.transform.position;
+
+        Vector2 Relative_v = _Body_2.getLinearVelocity() &#43; new Vector2(-_Body_2.getAngularVelocity() * rB.y, _Body_2.getAngularVelocity() * rB.x)
+                           - (_Body_1.getLinearVelocity()) - new Vector2(-_Body_1.getAngularVelocity() * rA.y, _Body_1.getAngularVelocity() * rA.x);
+
+        Vector2 tangent = Relative_v - (Vector2.Dot(Relative_v, point.Normal) * point.Normal);
+        tangent.Normalize();
+        return tangent;
+    }
+
+    // gets the scripts on the object that derive from collisions and run ontrigger enter method
+    // target is the obj the scripts should run the function on and trigger is the trigger they are entering
+    void TriggerEnter(ColliderBase target, ColliderBase trigger)
+    {
+        Collision[] scripts;
+        scripts = target._obj.GetComponents&lt;Collision&gt;();
+        for (int i = 0; i &lt; scripts.Length; i&#43;&#43;)
+        {
+            scripts[i].Trigger(trigger);
+        }
+    }
+
+    // gets the scripts on the object that derive from collisions and run ontriggerstay method
+    void TriggerStay(ColliderBase target, ColliderBase trigger)
+    {
+        Collision[] scripts;
+        scripts = target._obj.GetComponents&lt;Collision&gt;();
+        for (int i = 0; i &lt; scripts.Length; i&#43;&#43;)
+        {
+            scripts[i].TriggerStay(trigger);
+        }
+    }
+
+    // gets the scripts on the object that derive from collisions and run ontriggerstay method
+    void TriggerExit(ColliderBase target, ColliderBase trigger)
+    {
+        Collision[] scripts;
+        scripts = target._obj.GetComponents&lt;Collision&gt;();
+        for (int i = 0; i &lt; scripts.Length; i&#43;&#43;)
+        {
+            scripts[i].TriggerExit(trigger);
+        }
+    }
+
+    void OnCollision(ColliderBase target, ColliderBase trigger)
+    {
+        Collision[] scripts;
+        scripts = target._obj.GetComponents&lt;Collision&gt;();
+        for (int i = 0; i &lt; scripts.Length; i&#43;&#43;)
+        {
+            scripts[i].OnCollision(trigger);
+        }
+    }
+}
+
+
+
+       </code></pre>
+
+          </div>
+           <div class="text">Script used to do collison detection and construct collision manifolds</div>
+        </div>
+        
+        
+        
+        <div class="snippet slideshow_fade">
+          <div class="numbertext"> 2 / 2</div>
+          <div class="codesnippet">
+            <pre><code class="cpp">
+        ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class Manifold {
+
+    public rigidBody object_A;
+    public rigidBody object_B;
+    public ColliderBase Collider_A;
+    public ColliderBase Collider_B;
+    public bool IsTrigger;
+    public bool Persistent;
+    List&lt;CollisionCheck.Contact_Point&gt; contacts = new List&lt;CollisionCheck.Contact_Point&gt;();
+    
+    public Manifold()
+    {
+    }
+
+    //function that will resolve the collision
+    public void Resolve()
+    {
+        // if the manifold is a trigger manifold don&#39;t resolve
+        if(IsTrigger)
+        {
+            return;
+        }
+
+        for (int i = 0; i &lt; contacts.Count; i&#43;&#43;)
+        {
+
+            float e;
+
+            // get the distances from centre of mass to point of deepest penetration
+            Vector2 rA = contacts[i].WorlCoords[0] - (Vector2)object_A.transform.position;
+            Vector2 rB = contacts[i].WorlCoords[1] - (Vector2)object_B.transform.position;
+
+            // calculate relative velocity
+            Vector2 relativeV = object_B.getLinearVelocity() &#43; new Vector2(-object_B.getAngularVelocity() * rB.y, object_B.getAngularVelocity() * rB.x)
+                              - (object_A.getLinearVelocity()) - new Vector2(-object_A.getAngularVelocity() * rA.y, object_A.getAngularVelocity() * rA.x);
+
+            e = Mathf.Min(object_A.Resitution, object_B.Resitution);
+            // calculate the velocity on N
+            float relativeN = Vector2.Dot(relativeV, contacts[i].Normal);
+
+            if (relativeN &gt; 0)
+            {
+                return;
+            }
+            
+            
+            float raCrossN = rA.x * contacts[i].Normal.y - rA.y * contacts[i].Normal.x;
+            float rbCrossN = rB.x * contacts[i].Normal.y - rB.y * contacts[i].Normal.x;
+
+            // calculate the impulse
+            float j = -(1.0f &#43; e) * relativeN;
+            j /=  object_A.GetInvMass() &#43; object_B.GetInvMass() &#43; (raCrossN * raCrossN) * object_A.GetInvInertia() &#43; (rbCrossN * rbCrossN) * object_B.GetInvInertia();
+            j /= contacts.Count;
+            if (j &lt; 2.0f)
+            {
+                e = 0;
+                j = -(1.0f &#43; e) * relativeN;
+                j /= object_A.GetInvMass() &#43; object_B.GetInvMass() &#43; (raCrossN * raCrossN) * object_A.GetInvInertia() &#43; (rbCrossN * rbCrossN) * object_B.GetInvInertia();
+                j /= contacts.Count;
+            }
+            Vector2 impulse = j * contacts[i].Normal;
+
+            // apply the impulse
+            object_A.ApplyImpulse(-impulse, rA);
+            object_B.ApplyImpulse(impulse, rB);
+
+            // calculate the relative velocty with the new impulse applied
+            relativeV = object_B.getLinearVelocity() &#43; new Vector2(-object_B.getAngularVelocity() * rB.y, object_B.getAngularVelocity() * rB.x)
+                              - (object_A.getLinearVelocity()) - new Vector2(-object_A.getAngularVelocity() * rA.y, object_A.getAngularVelocity() * rA.x);
+
+            Vector2 Tangent = contacts[i].Tangent;
+            /*friction*/
+            // the friction is the force that also applies the torque when a ball rolls down a hill
+            // friction impuls that needs to be overcome
+            float jfriction = -Vector2.Dot(relativeV, Tangent);
+            jfriction /= object_A.GetInvMass() &#43; object_B.GetInvMass() &#43; (raCrossN * raCrossN) * object_A.GetInvInertia() &#43; (rbCrossN * rbCrossN) * object_B.GetInvInertia();
+            jfriction /= contacts.Count;
+            // coulomb law :F_friction &lt;= frictionconstant * F_normal
+            // F_normal = j. in this case we check impulses so the impuls along noral N = f_normal
+
+            // calculate the friction constant by getting the 2 friction variables from the 2 objects
+            // this calculation can be anything
+            float frictionconstant = Mathf.Sqrt(object_A.StaticFriction * object_A.StaticFriction &#43; object_B.StaticFriction * object_B.StaticFriction);
+            Vector2 FrictionImpulse;
+
+            // check if the activation energy has been exeeded and apply friction accordingly
+            // if not then the frition impuls is as big as our normal impulse
+            // else apply the dynamic friction
+            if (Mathf.Abs(jfriction) &lt; float.Epsilon)
+                return;
+
+            if (Mathf.Abs(jfriction) &lt; j * frictionconstant)
+            {
+                FrictionImpulse = jfriction * Tangent;
+            }
+            else
+            {
+                frictionconstant = Mathf.Sqrt(object_A.DynamicFriction * object_A.DynamicFriction &#43; object_B.DynamicFriction * object_B.DynamicFriction);
+                FrictionImpulse = -j * Tangent * frictionconstant;
+            }
+
+            // apply the friction impulse according to the collider
+                object_A.ApplyImpulse(-FrictionImpulse, rA);
+                object_B.ApplyImpulse(FrictionImpulse, rB);
+
+            
+        }
+    }
+
+    // validates contactpoints to check if they are persistent
+    public void Validate()
+    {
+        for (int i = contacts.Count - 1; i &gt;= 0; i--)
+        {
+            // calculate the new global positions from the local points that was collididing
+            Vector2[] newGlobalPosition = new Vector2[2] {(Vector2)object_A.transform.position &#43; contacts[i].LocalCoords[0],
+                                                          (Vector2)object_B.transform.position &#43; contacts[i].LocalCoords[1]};
+
+            // new line from points of deepest penetration with the new global position of those points
+            Vector2 AB = newGlobalPosition[1] - newGlobalPosition[0];
+
+            // calculate the difference between the new gl0bal posisiotn of the contactpoint and the worldposition from when it was created
+            Vector2 GlobalDifferenceA = contacts[i].WorlCoords[0] - newGlobalPosition[0];
+            Vector2 GlobalDifferenceB = contacts[i].WorlCoords[1] - newGlobalPosition[1];
+
+            // bool to check if the point is still penetrating
+            bool StillPenetrating = Vector2.Dot(contacts[i].Normal, AB) &lt;= 0.0f;
+
+            // bools to check if the points haven&#39;t moved to much
+            bool ACloseEnough = GlobalDifferenceA.sqrMagnitude &lt; 0.0001f;
+            bool BCloseEnough = GlobalDifferenceB.sqrMagnitude &lt; 0.0001f;
+
+            // if the contactpoints are still penetrating and if they didn&#39;t move to much than keep the points
+            if (ACloseEnough &amp;&amp; BCloseEnough &amp;&amp; StillPenetrating)
+            {
+                contacts[i].SetPersistent(true);
+            }
+            else
+            {
+                contacts.Remove(contacts[i]);
+            }
+        }
+    }
+
+    // makes sure we only have a max of two contact points at the same time
+    public void Manage()
+    {
+        // find contact that pentrates the most
+        CollisionCheck.Contact_Point deepest = new CollisionCheck.Contact_Point();
+        float deepestPenetration = -float.MaxValue;
+        for (int i = 0; i &lt; contacts.Count; i&#43;&#43;)
+        {
+            if (contacts[i].Penetration &gt; deepestPenetration)
+            {
+                deepestPenetration = contacts[i].Penetration;
+                deepest = contacts[i];
+            }
+        }
+
+        //find the second contact furthest from the deepest one
+        CollisionCheck.Contact_Point furthest_1 = new CollisionCheck.Contact_Point();
+        float dist_sqr = -float.MaxValue;
+        for (int i = 0; i &lt; contacts.Count; i&#43;&#43;)
+        {
+            float dist = (contacts[i].LocalCoords[0] - deepest.LocalCoords[0]).sqrMagnitude;
+            if (dist &gt; dist_sqr)
+            {
+                dist_sqr = dist;
+                furthest_1 = contacts[i];
+            }
+        }
+
+        // clear manifold and add to most usefull points
+        contacts.Clear();
+        contacts.Add(deepest);
+        contacts.Add(furthest_1);
+
+        // check manifold for persistent contactpoints
+        Persistent = false;
+        for (int i = 0; i &lt; contacts.Count; i&#43;&#43;)
+        {
+            if (contacts[i].persistent)
+                Persistent = true;
+        }
+    }
+
+    // add contactpoint to the manifold
+    public void AddContact(CollisionCheck.Contact_Point point)
+    {
+        if (contacts.Count == 0)
+        {
+            contacts.Add(point);
+            return;
+        }
+        // check if the points are far enough appart to be added as a new contact point
+        for (int i = 0; i &lt; contacts.Count; i&#43;&#43;)
+        {
+            // lines created by newly added point and points in manifold
+            Vector2 DifferenceA = point.WorlCoords[0] - contacts[i].WorlCoords[0];
+            Vector2 DifferenceB = point.WorlCoords[1] - contacts[i].WorlCoords[1];
+
+            // bool  values to check if the points are far enough appart
+            bool AFarEnough = DifferenceA.sqrMagnitude &gt; 0.0001f;
+            bool BFarEnough = DifferenceB.sqrMagnitude &gt; 0.0001f;
+
+            if (AFarEnough &amp;&amp; BFarEnough)
+            {
+                point.persistent = false;
+                contacts.Add(point);
+                return;
+            }
+        }
+    }
+
+    public void SetBodys(ColliderBase obj_A, ColliderBase obj_B)
+    {
+        Collider_A = obj_A;
+        Collider_B = obj_B;
+
+        object_A = obj_A._body;
+        object_B = obj_B._body;
+    }
+
+    public void CorrectPosition()
+    {
+        if(IsTrigger)
+            return;
+
+        float percent = 0.5f;
+        float slop = 0.05f;
+
+        for (int i = 0; i &lt; contacts.Count; i&#43;&#43;)
+        {
+            Vector2 correction = Mathf.Max(contacts[i].Penetration - slop, 0.0f) / (object_A.GetInvMass() &#43; object_B.GetInvMass()) * percent * contacts[i].Normal;
+            object_A.transform.position -= object_A.GetInvMass() * (Vector3)correction;
+            object_B.transform.position &#43;= object_B.GetInvMass() * (Vector3)correction;
+        }
+    }
+
+    public CollisionCheck.Contact_Point GetContactPoint(int index)
+    {
+        return contacts[index];
+    }
+
+    public int GetListSize()
+    {
+        return contacts.Count;
+    }
+
+    public Vector2 GetTangent(Vector2 normal, rigidBody A, rigidBody B)
+    {
+        Vector2 Relative_v = B.getLinearVelocity() - A.getLinearVelocity();
+        Vector2 tangent = Relative_v - (Vector2.Dot(Relative_v, normal) * normal);
+        tangent.Normalize();
+        return tangent;
+    }
+}
+
+       </code></pre>
+
+          </div>
+           <div class="text">script used to resolve collison forces</div>
+        </div>
+        
+        
+        <a class="prev_btn" id="slideshow_btn" onclick="plusSnippet(-1)">&#10094;</a>
+        <a class="next_btn" id="slideshow_btn" onclick="plusSnippet(1)">&#10095;</a>
+        
+      </div>
+      <div style="text-align:center">
+        
+        <span class="snippet_dot" onclick="currentSnippet( 0 )"></span>
+        
+        <span class="snippet_dot" onclick="currentSnippet( 1 )"></span>
+        
+      </div>
+
+    </div>
+    
+
+
+    <div>
+      <h2>Summary</h2>
+      This is an attemp at creating a 2D physics engine in unity. All of the basic collision shapes are supported i.e. Box, Sphere and Convex hull. I used the GJK algorithm to do the collision detection. And build some tools to deabug the engine and create physics objects.
+      
+    </div>
+    <div class="container">
+      <div class="row tools">
+        <div class="col-md-4">
+          <h2>Responsibilities</h2>
+          <ul>
+            
+            <li>2D physics engine</li>
+            
+            <li>level editor tool</li>
+            
+            <li>collider editor tool</li>
+            
+            <li>physics engine debugging tool</li>
+            
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2>Tools Used</h2>
+          <div class="row tools">
+
+            <div class="column tools_column">
+              
+              
+              <div class="logo_card">
+                <a href="https://www.visualstudio.com/" target="_blank">
+                  <img src="/img/icons/visual-studio.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Visual studio
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="https://trello.com/" target="_blank">
+                  <img src="/img/icons/trello.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Trello
+                </div>
+              </div>
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="https://unity3d.com/" target="_blank">
+                  <img src="/img/icons/unity.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Unity 3D
+                </div>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h2>Team</h2>
+          <p>
+            
+            Designers: 1 <br>
+            
+            Artists: 2 <br>
+            
+            Programmers: 1 <br>
+            
+          </p>
+          
+          <h2>Project length</h2>
+          <p>
+            8 weeks
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="article-style" itemprop="articleBody">
+
+      <h2>Details</h2>
+      <p><strong>2D Physics engine:</strong> The 2D physics engine uses impulse based collision resolution to resolve things like linear velocity, angular velocity and friction. In order to do collision I could&rsquo;ve used the seperating axis theorem but instead decided to go for GJK to challange myself (SAT would&rsquo;ve been faster and more performant however).
+For a broadphase collision detection I went for a simple quadtree due to project time constraints. The supported colliders are sphere, box and convex hull.</p>
+
+<p><strong>Tooling:</strong> The physics engine came with a couple of custom inspectors that could be used to debug the engine and modify physics objects. Besides these tools I also build a level editor for the game that would use this physics engine.</p>
+
+    </div>
+
+    <p class="project-download">
+      
+    </p>
+  </div>
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/project/dear-father/"><span
+      aria-hidden="true">&larr;</span> Previous</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<script>
+  var snippetIndex = 1;
+  showSnippets(snippetIndex)
+  toggleSnippets()
+
+  function showSnippets(n) {
+    var i;
+    var slides = document.getElementsByClassName("snippet");
+    if (slides.length == 0) {
+      return;
+    }
+
+
+    var dots = document.getElementsByClassName("snippet_dot");
+    if (n > slides.length) { snippetIndex = 1 }
+    if (n < 1) { snippetIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[snippetIndex - 1].style.display = "block";
+    dots[snippetIndex - 1].className += " dot_active";
+  }
+
+  function plusSnippet(n) {
+    showSnippets(snippetIndex += n);
+  }
+
+  function currentSnippet(n) {
+    showSnippets(snippetIndex = n + 1);
+  }
+
+
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function toggleSnippets() {
+    var btns = document.getElementsByClassName("snippet-toggle");
+    for (i = 0; i < btns.length; i++) {
+      if (btns[i].classList.contains("active")) {
+        btns[i].classList.remove("active");
+      }
+      else {
+        btns[i].className += " active";
+      }
+    }
+
+
+
+    var containers = document.getElementsByClassName("snippet-container");
+    for (i = 0; i < containers.length; i++) {
+      if (containers[i].style.display != "none") {
+        containers[i].style.display = "none";
+      }
+      else if (containers[i].style.display == "none") {
+        containers[i].style.display = "block";
+      }
+    }
+  }
+
+
+
+
+  function stopVideo(element) {
+    var wrapper = element.querySelector('.videoWrapper');
+
+    if (wrapper) {
+      var iframe = element.querySelector('iframe');
+      var video = element.querySelector('video');
+      if (iframe) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+      }
+      if (video) {
+        video.pause();
+      }
+    }
+  };
+
+  function plusSlides(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex = n + 1);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " dot_active";
+  }
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Your Name &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

@@ -28,9 +28,7 @@
   
     
     
-      
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-      
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
     
   
   
@@ -181,9 +179,10 @@
 </nav>
 
 
+
 <article class="article article-project" itemscope itemtype="http://schema.org/Article">
 
-    
+  
 <div class="article-header">
   <img src="/img/headers/clouded.png" class="article-banner" itemprop="image">
   
@@ -191,207 +190,212 @@
 
 
 
-    <div class="article-container">
-        <div class="pub-title">
-            <h1 itemprop="name">clouded</h1>
-            <span class="pub-authors" itemprop="author">&nbsp;</span>
-        </div>
-
-        
-        <div class="slideshow-container">
-            
-            
-            
-            
-            <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 1 / 4</div>
-                
-                <div class="videoWrapper">
-                    <iframe width="100%" height="auto"
-                            src="https://www.youtube.com/embed/NS1fZv6piRQ"></iframe>
-                </div>
-                
-            </div>
-            
-            
-            
-            <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 2 / 4</div>
-                
-                <img src="/slideshows/clouded/screenshot1.png" style="width:100%">
-                
-                
-            </div>
-            
-            
-            
-            <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 3 / 4</div>
-                
-                <img src="/slideshows/clouded/screenshot2.png" style="width:100%">
-                
-                
-            </div>
-            
-            
-            
-            <div class="mySlides slideshow_fade">
-                <div class="numbertext"> 4 / 4</div>
-                
-                <img src="/slideshows/clouded/screenshot3.png" style="width:100%">
-                
-                
-            </div>
-            
-            
-            <a class="prev_btn" id="slideshow_btn" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next_btn" id="slideshow_btn" onclick="plusSlides(1)">&#10095;</a>
-            
-        </div>
-        <div style="text-align:center">
-            
-            <span class="dot" onclick="currentSlide( 0 )"></span>
-            
-            <span class="dot" onclick="currentSlide( 1 )"></span>
-            
-            <span class="dot" onclick="currentSlide( 2 )"></span>
-            
-            <span class="dot" onclick="currentSlide( 3 )"></span>
-            
-        </div>
-        
-
-
-        <div>
-            <h2>Summary</h2>
-            Clouded is a 2 week long project build using the HTC vive. The game revolves around manipulating clouds in order to manage the world state untill the specific conditions are met. The game was build using unity3D and the htc vive.
-            
-        </div>
-        <div class="container">
-            <div class="row tools">
-                <div class="col-md-4">
-                    <h2>Responsibilities</h2>
-                    <ul>
-                        
-                        <li>cloud behaviour</li>
-                        
-                        <li>controller input</li>
-                        
-                        <li>UI implementation</li>
-                        
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h2>Tools Used</h2>
-                    <div class="row tools">
-
-                        <div class="column tools_column">
-                            
-                            
-                            <div class="logo_card">
-                                <a href="https://www.visualstudio.com/" target="_blank">
-                                    <img src="/img/icons/visual-studio.png" class="icon">
-                                </a>
-                                <div class="card-text">
-                                    Visual studio
-                                </div>
-                            </div>
-                            
-                            
-                            
-                            
-                            
-                            
-                        </div>
-                        <div class="column tools_column">
-                            
-                            
-                            
-                            
-                            <div class="logo_card">
-                                <a href="https://trello.com/" target="_blank">
-                                    <img src="/img/icons/trello.png" class="icon">
-                                </a>
-                                <div class="card-text">
-                                    Trello
-                                </div>
-                            </div>
-                            
-                            
-                            
-                            
-                        </div>
-                        <div class="column tools_column">
-                            
-                            
-                            
-                            
-                            
-                            
-                            <div class="logo_card">
-                                <a href="https://unity3d.com/" target="_blank">
-                                    <img src="/img/icons/unity.png" class="icon">
-                                </a>
-                                <div class="card-text">
-                                    Unity 3D
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <h2>Team</h2>
-                    <p>
-                        
-                        Designers: 3 <br>
-                        
-                        Artists: 3 <br>
-                        
-                        Programmers: 2 <br>
-                        
-                    </p>
-                    
-                    <h2>Project length</h2>
-                    <p>
-                        3 weeks
-                    </p>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="article-style" itemprop="articleBody">
-
-            <h2>Details</h2>
-            <p><strong>Cloud behaviour:</strong> The movement of the cloud was achieved using a vector field. This field is then manipulated by holding a button on the HTC controller and dragging it around.
-In order to smooth out the movement a simple box blurr is applied to the vector field.</p>
-
-<p>The creation of rain and thunderstrom clouds was done by using simple spatial partitioning. The cloud layer would be divided into a grid and all small cloud particles would be inserted in this grid. The depending on
-the density of a grid cell the alogrithm would start checking its neighbours. If the neighbours also exceeded the density threshold they would be added to a list and the same would be done for the new found cells. At the end the bounding box of all
-neighbouring cells would be big enough all particles would be removed and a rain cloud would be created. Depending on the amount of particles removed the rain would be more severe or last longer.
-For dry areas the same algorithem could be used but except for checking if a cell exceeds a value, I would check if the density was below a specified value.</p>
-
-<p><strong>Controller input / UI:</strong> For controller input there are only 2 buttons used. The trigger on the back of the controller is used to manipulate the cloud movment. The circular touchpad
-is used to navigate the menus. The reason for using the touchpad for menus is that it comes close to using a mouse. When you put your thumb on the touchpad a small sphere is displayed on the menu.
-This sphere indicated your thumb position on the touchpad. By then moving your thumb over the touchpad the sphere would move across the menu and you can select something by clicking the youchpad. This gave
-some intuitive controls to menus that did not require any pointing a laser at a plane.</p>
-
-        </div>
-
-        <p class="project-download">
-            
-            <a href="https://github.com/StanPepels/StanPepels.github.io/blob/master/test?raw=true" class="btn btn-primary btn-outline">
-                Download
-            </a>
-            
-        </p>
+  <div class="article-container">
+    <div class="pub-title">
+      <h1 itemprop="name">clouded</h1>
+      <span class="pub-authors" itemprop="author">&nbsp;</span>
     </div>
+
+    
+    <div class="slideshow-container">
+      
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 1 / 4</div>
+        
+        <div class="videoWrapper">
+          <iframe width="100%" height="auto"
+                  src="https://www.youtube.com/embed/NS1fZv6piRQ"></iframe>
+        </div>
+         <div class="text">first test img</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 2 / 4</div>
+        
+        <img src="/slideshows/clouded/screenshot1.png" style="width:100%">
+        
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 3 / 4</div>
+        
+        <img src="/slideshows/clouded/screenshot2.png" style="width:100%">
+        
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 4 / 4</div>
+        
+        <img src="/slideshows/clouded/screenshot3.png" style="width:100%">
+        
+        
+      </div>
+      
+      
+      <a class="prev_btn" id="slideshow_btn" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next_btn" id="slideshow_btn" onclick="plusSlides(1)">&#10095;</a>
+      
+    </div>
+    <div style="text-align:center">
+      
+      <span class="dot" onclick="currentSlide( 0 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 1 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 2 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 3 )"></span>
+      
+    </div>
+    
+
+    
+
+
+    <div>
+      <h2>Summary</h2>
+      Clouded is a 2 week long project build using the HTC vive. The game revolves around manipulating clouds in order to manage the world state untill specific conditions are met. The game was build using the htc vive.
+      
+    </div>
+    <div class="container">
+      <div class="row tools">
+        <div class="col-md-4">
+          <h2>Responsibilities</h2>
+          <ul>
+            
+            <li>cloud behaviour</li>
+            
+            <li>controller input</li>
+            
+            <li>UI implementation</li>
+            
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2>Tools Used</h2>
+          <div class="row tools">
+
+            <div class="column tools_column">
+              
+              
+              <div class="logo_card">
+                <a href="https://www.visualstudio.com/" target="_blank">
+                  <img src="/img/icons/visual-studio.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Visual studio
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="https://trello.com/" target="_blank">
+                  <img src="/img/icons/trello.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Trello
+                </div>
+              </div>
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="https://unity3d.com/" target="_blank">
+                  <img src="/img/icons/unity.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Unity 3D
+                </div>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h2>Team</h2>
+          <p>
+            
+            Designers: 3 <br>
+            
+            Artists: 3 <br>
+            
+            Programmers: 2 <br>
+            
+          </p>
+          
+          <h2>Project length</h2>
+          <p>
+            2 weeks
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="article-style" itemprop="articleBody">
+
+      <h2>Details</h2>
+      <p><strong>Cloud behaviour:</strong> The movement of the cloud particles was achieved using a vector field. This field is then manipulated by holding a button on the Vive controller and dragging it around the air.
+In order to smooth out the movement, a simple box blur is applied to the vector field.</p>
+
+<p>The creation of rain and thunderstorm clouds was done by using simple spatial partitioning. The cloud layer would be divided into a grid and all small cloud particles would be inserted in this grid. Then depending on
+the density of a grid cell, the algorithm would start checking its neighbors. If the neighbors also exceeded the density threshold they would be added to a list and the same would be done for the newfound cells (much like a flood fill algorithm).
+In the end, the bounding box of all neighboring cells would calculated, and if big enough all particles would be removed and a rain cloud would be created. Depending on the number of particles removed the rain would be more severe or last longer.
+For dry areas, the same algorithm could be used but except for checking if a cell exceeds a value, I would check if the density was below a specified value.</p>
+
+<p><strong>Controller input / UI:</strong> For controller input there are only 2 buttons used. The trigger on the back of the controller is used to manipulate the cloud movement. The circular touchpad
+is used to navigate the menus. The reason for using the touchpad for menus is that it comes close to using a mouse. When you put your thumb on the touchpad a small sphere is displayed on the menu.
+This sphere indicated your thumb position on the touchpad. By then moving your thumb over the touchpad the sphere would move across the menu and you can select something by clicking the touchpad. This gave
+some intuitive controls to menus that did not require any pointing of lasers at a plane.</p>
+
+    </div>
+
+    <p class="project-download">
+      
+      
+      <a href="https://github.com/StanPepels/StanPepels.github.io/blob/master/test?raw=true" class="btn btn-primary btn-outline">
+        Download
+      </a>
+      
+      
+    </p>
+  </div>
 </article>
 
 <div class="container">
-    <nav>
+  <nav>
   <ul class="pager">
     
     <li class="previous"><a href="/project/agr/"><span
@@ -408,51 +412,114 @@ some intuitive controls to menus that did not require any pointing a laser at a 
 </div>
 
 <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
+  var snippetIndex = 1;
+  showSnippets(snippetIndex)
+  toggleSnippets()
 
-    function stopVideo(element) {
-        var wrapper = element.querySelector('.videoWrapper');
-
-        if (wrapper) {
-            var iframe = element.querySelector('iframe');
-            var video = element.querySelector('video');
-            if (iframe) {
-                var iframeSrc = iframe.src;
-                iframe.src = iframeSrc;
-            }
-            if (video) {
-                video.pause();
-            }
-        }
-    };
-
-    function plusSlides(n) {
-        stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
-        showSlides(slideIndex += n);
+  function showSnippets(n) {
+    var i;
+    var slides = document.getElementsByClassName("snippet");
+    if (slides.length == 0) {
+      return;
     }
 
-    function currentSlide(n) {
-        stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
-        showSlides(slideIndex = n + 1);
+
+    var dots = document.getElementsByClassName("snippet_dot");
+    if (n > slides.length) { snippetIndex = 1 }
+    if (n < 1) { snippetIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[snippetIndex - 1].style.display = "block";
+    dots[snippetIndex - 1].className += " dot_active";
+  }
+
+  function plusSnippet(n) {
+    showSnippets(snippetIndex += n);
+  }
+
+  function currentSnippet(n) {
+    showSnippets(snippetIndex = n + 1);
+  }
+
+
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function toggleSnippets() {
+    var btns = document.getElementsByClassName("snippet-toggle");
+    for (i = 0; i < btns.length; i++) {
+      if (btns[i].classList.contains("active")) {
+        btns[i].classList.remove("active");
+      }
+      else {
+        btns[i].className += " active";
+      }
     }
 
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" dot_active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " dot_active";
+
+
+    var containers = document.getElementsByClassName("snippet-container");
+    for (i = 0; i < containers.length; i++) {
+      if (containers[i].style.display != "none") {
+        containers[i].style.display = "none";
+      }
+      else if (containers[i].style.display == "none") {
+        containers[i].style.display = "block";
+      }
     }
+  }
+
+
+
+
+  function stopVideo(element) {
+    var wrapper = element.querySelector('.videoWrapper');
+
+    if (wrapper) {
+      var iframe = element.querySelector('iframe');
+      var video = element.querySelector('video');
+      if (iframe) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+      }
+      if (video) {
+        video.pause();
+      }
+    }
+  };
+
+  function plusSlides(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex = n + 1);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " dot_active";
+  }
 </script>
+
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
@@ -523,6 +590,8 @@ some intuitive controls to menus that did not require any pointing a laser at a 
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
       
 
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>
       
 
       

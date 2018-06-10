@@ -253,7 +253,7 @@ small,
 
 .home-section {
   background-color: rgb(255, 255, 255);
-  padding: 110px 0 110px 0;
+  padding: 110px 0 20px 0;
   animation: intro 0.3s both;
   animation-delay: 0.15s;
 }
@@ -799,8 +799,8 @@ article {
   transform: translate(0, -50%);
   opacity: 0;
   transition: all 0.2s ease-out;
-  font-family: 'FontAwesome';
-  content: '\f0c1';
+  /*font-family: 'FontAwesome';
+  content: '\f08e';*/
   text-align: center;
   font-size: 3rem;
   color: #666;
@@ -921,6 +921,11 @@ footer a#back_to_top i {
 
 .btn-toolbar .btn.btn-primary:active,
 .btn-toolbar .btn.btn-primary.active {
+  background-color: #72e057 !important;
+}
+
+.snippet-toggle.btn.btn-primary:active,
+.snippet-toggle.btn.btn-primary.active {
   background-color: #72e057 !important;
 }
 
@@ -1528,6 +1533,22 @@ div.odd{
     background-color: hsla(108, 62%, 49%, 1);
   }
 
+
+.snippet_dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+  .dot_active, .snippet_dot:hover {
+    background-color: hsla(108, 62%, 49%, 1);
+  }
+
 /* Fading animation */
 .slideshow_fade {
   -webkit-animation-name: fade;
@@ -1621,4 +1642,19 @@ div.odd{
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.codesnippet {
+  overflow:scroll;
+  height: 517.5px;
+}
+
+.data-table {
+  color: #999999;
+  font-size: 0.75rem;
+}
+
+.table-link{
+  color: #999999;
+  font-size: 0.75rem;
 }

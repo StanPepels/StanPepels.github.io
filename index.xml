@@ -11,13 +11,26 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Custom physics</title>
+      <link>/project/custom-physics/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/custom-physics/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;2D Physics engine:&lt;/strong&gt; The 2D physics engine uses impulse based collision resolution to resolve things like linear velocity, angular velocity and friction. In order to do collision I could&amp;rsquo;ve used the seperating axis theorem but instead decided to go for GJK to challange myself (SAT would&amp;rsquo;ve been faster and more performant however).
+For a broadphase collision detection I went for a simple quadtree due to project time constraints. The supported colliders are sphere, box and convex hull.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tooling:&lt;/strong&gt; The physics engine came with a couple of custom inspectors that could be used to debug the engine and modify physics objects. Besides these tools I also build a level editor for the game that would use this physics engine.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>dear father</title>
       <link>/project/dear-father/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/project/dear-father/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Dialogue tree tool:&lt;/strong&gt; Most of my work during this short project went towards creating a tool for the designers to implement their dialogues. The descision to make a tool
-in such a short term project came from the fact that this entire game is based on dialogues. The dialogue tree itself is an extension of unreals behaviour trees.
+      <description>&lt;p&gt;&lt;strong&gt;Dialogue tree tool:&lt;/strong&gt; Most of my work during this short project went towards creating a tool for the designers to implement their dialogues. The decision to make a tool
+in such a short-term project came from the fact that this entire game is based on dialogues. The dialogue tree itself is an extension of unreal behavior trees.
 We made a couple of custom nodes.
 &lt;ul&gt;
 &lt;li&gt;The first node was a &lt;strong&gt;decorator&lt;/strong&gt;. This decorator holds a question to be displayed and some possible answers. Each answer can be assigned points or an animation.&lt;/li&gt;
@@ -25,9 +38,9 @@ We made a couple of custom nodes.
 &lt;li&gt;The final node is another &lt;strong&gt;action&lt;/strong&gt;. This final node would stop the conversation.&lt;/li&gt;
 &lt;/ul&gt;
 When constructing a dialogue tree the designer would use a selector node(provided by unreal) and place the dialogue decorator on it. The next step for the designer
-would be to fill in the decorator fields. After the decorater was set the designers would create the wait for answer action and create more selector nodes
-(1 node for each answer). In the decorator the answers are numberd from 0 to N. In the tree the next nodes would be red from left to right thus answer 0 would move to the
-left most node. This process would then be repeated to build the entire dialogue.&lt;/p&gt;
+would be to fill in the decorator fields. After the decoration was set the designers would create the wait for answer action and create more selector nodes
+(1 node for each answer). In the decorator the answers are numbered from 0 to N. In the tree the next nodes would be read from left to right thus answer 0 would move to the
+leftmost node. This process would then be repeated to build the entire dialogue.&lt;/p&gt;
 </description>
     </item>
     
@@ -37,11 +50,11 @@ left most node. This process would then be repeated to build the entire dialogue
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/project/orbis/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Controller:&lt;/strong&gt; The main responsibility with the controller that I had was do the input. The main issue that we faced with the input was that we needed to capture the seperate input from multiple mice.
-This was achieved with help a third party library. Besides doing the input I also had a hand in building the actual controller.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Controller:&lt;/strong&gt; The main responsibility of the controller that I had was the input. The main issue that we faced with the input was that we needed to capture the separate input from multiple mice.
+This was achieved with help from a third party library. Besides doing the input I also had a hand in building the actual controller.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Gameplay:&lt;/strong&gt; Regarding gameplay I did the &amp;lsquo;bumping behaviour&amp;rsquo; and the audio implementation. The bumping was only in affect if your velocity would align with the collision normal. Then by projecting the velocity onto the collision normal
-I would determain the total amount of force used to bumb the other player away. The player would also be immume to bumping until it has touched down on the platform. This was done to prevent spawn camping.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gameplay:&lt;/strong&gt; Regarding gameplay I did the &amp;lsquo;bumping behavior&amp;rsquo; and the audio implementation. The bumping was only in applied if your velocity would align with the collision normal. Then by projecting the velocity onto the collision normal
+I would determine the total amount of force used to bump the other player away. The player would also be immune to bumping until it has touched down on the platform. This was done to prevent spawn camping.&lt;/p&gt;
 </description>
     </item>
     
@@ -51,18 +64,18 @@ I would determain the total amount of force used to bumb the other player away. 
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/project/clouded/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Cloud behaviour:&lt;/strong&gt; The movement of the cloud was achieved using a vector field. This field is then manipulated by holding a button on the HTC controller and dragging it around.
-In order to smooth out the movement a simple box blurr is applied to the vector field.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Cloud behaviour:&lt;/strong&gt; The movement of the cloud particles was achieved using a vector field. This field is then manipulated by holding a button on the Vive controller and dragging it around the air.
+In order to smooth out the movement, a simple box blur is applied to the vector field.&lt;/p&gt;
 
-&lt;p&gt;The creation of rain and thunderstrom clouds was done by using simple spatial partitioning. The cloud layer would be divided into a grid and all small cloud particles would be inserted in this grid. The depending on
-the density of a grid cell the alogrithm would start checking its neighbours. If the neighbours also exceeded the density threshold they would be added to a list and the same would be done for the new found cells. At the end the bounding box of all
-neighbouring cells would be big enough all particles would be removed and a rain cloud would be created. Depending on the amount of particles removed the rain would be more severe or last longer.
-For dry areas the same algorithem could be used but except for checking if a cell exceeds a value, I would check if the density was below a specified value.&lt;/p&gt;
+&lt;p&gt;The creation of rain and thunderstorm clouds was done by using simple spatial partitioning. The cloud layer would be divided into a grid and all small cloud particles would be inserted in this grid. Then depending on
+the density of a grid cell, the algorithm would start checking its neighbors. If the neighbors also exceeded the density threshold they would be added to a list and the same would be done for the newfound cells (much like a flood fill algorithm).
+In the end, the bounding box of all neighboring cells would calculated, and if big enough all particles would be removed and a rain cloud would be created. Depending on the number of particles removed the rain would be more severe or last longer.
+For dry areas, the same algorithm could be used but except for checking if a cell exceeds a value, I would check if the density was below a specified value.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Controller input / UI:&lt;/strong&gt; For controller input there are only 2 buttons used. The trigger on the back of the controller is used to manipulate the cloud movment. The circular touchpad
+&lt;p&gt;&lt;strong&gt;Controller input / UI:&lt;/strong&gt; For controller input there are only 2 buttons used. The trigger on the back of the controller is used to manipulate the cloud movement. The circular touchpad
 is used to navigate the menus. The reason for using the touchpad for menus is that it comes close to using a mouse. When you put your thumb on the touchpad a small sphere is displayed on the menu.
-This sphere indicated your thumb position on the touchpad. By then moving your thumb over the touchpad the sphere would move across the menu and you can select something by clicking the youchpad. This gave
-some intuitive controls to menus that did not require any pointing a laser at a plane.&lt;/p&gt;
+This sphere indicated your thumb position on the touchpad. By then moving your thumb over the touchpad the sphere would move across the menu and you can select something by clicking the touchpad. This gave
+some intuitive controls to menus that did not require any pointing of lasers at a plane.&lt;/p&gt;
 </description>
     </item>
     
@@ -81,16 +94,16 @@ some intuitive controls to menus that did not require any pointing a laser at a 
                                       
     &lt;/div&gt;
     
-    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 0%;&#34;&gt;Custom attributes added to a maya root object&lt;/div&gt;
+    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 0%;&#34;&gt;Custom attributes added to a Maya root object&lt;/div&gt;
     
 &lt;/div&gt;
-&lt;strong&gt;Maya C++ plugin&lt;/strong&gt; My main work on this project was done on the maya plugin. When this plugin is installed together with the houdini tools our artists provided it would extend maya by giving objects extra attributes.
-These attributes are engine features such as collsion shapes / dimensions, setting collision layers, setting the object types etc. Besides this it came with an exporter. This would use the houdini tools to generate the collision mesh and
-visual mesh of the track. This would also generate all the wapoints used by the lap system in the engine. In order to allow for jumps a designer could create multiple &amp;lsquo;tracks&amp;rsquo; in the same level and link them up using the maya node editor.&lt;/p&gt;
+&lt;strong&gt;Maya C++ plugin&lt;/strong&gt; My main work on this project was done on the Maya plugin. When this plugin is installed together with the Houdini tools our artists provided it would extend Maya by giving objects extra attributes.
+These attributes are engine features such as collision shapes/dimensions, setting collision layers, setting the object types etc. Besides this, it came with an exporter. This would use the Houdini tools to generate the collision mesh and
+visual mesh of the track. This would also generate all the waypoints used by the lap system in the engine. In order to allow for jumps, a designer could create multiple &amp;lsquo;tracks&amp;rsquo; in the same level and link them up using the Maya node editor.&lt;/p&gt;
 
 &lt;p&gt;The export has 2 settings, Debug and Release. Debug would use the collision mesh as its visual mesh thus reducing the export time by a lot.
-In order to speed up export even more the export was multithreaded since the amount of vertices put out by houdini could be a lot depending on the houdingi tool settings the designer used
-(before multithreading a release export could take up to 2.5 min with 3.3 milion vertices. After the multithreding the same export took 41 seconds).
+In order to speed up export, even more, the export was multithreaded since the number of vertices put out by Houdini could be a lot depending on the Houdini tool settings the designer used
+(before multithreading a release export could take up to 2.5 min with 3.3 million vertices. After the multithreading the same export took 41 seconds).
 The outputted file is a binary file that could be fed directly to the engine.
 &lt;div style=&#34;float: right; position: relative; width: 100%;&#34;&gt;
     &lt;div&gt;
@@ -101,16 +114,16 @@ The outputted file is a binary file that could be fed directly to the engine.
                                       
     &lt;/div&gt;
     
-    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 3%;&#34;&gt;Multiple track parts could be linked up to create one coherent track. This allowed for jumps and splits. The voodoo track nodes were created by the plugin and would take a houdini tool object as input.&lt;/div&gt;
+    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 3%;&#34;&gt;Multiple track parts could be linked up to create one coherent track. This allowed for jumps and splits. The voodoo track nodes were created by the plugin and would take a Houdini tool object as input.&lt;/div&gt;
     
 &lt;/div&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; For the input I wrote an interface that works cross platform for both PC and PS4 allthough the game could only be played using a controller. On windows I used Xinput for handling controller support. The mouse and keyboard were used to tweak the game with ImGui
-The interfaced followed the listener pattern. That is to say in order to recieve input an object had to be registered with a single input processing system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; For the input I wrote an interface that works cross-platform for both PC and PS4 although the game could only be played using a controller. On windows, I used Xinput for handling controller support. The mouse and keyboard were used to tweak the game with ImGui
+The interfaced followed the listener pattern. That is to say in order to receive input an object had to be registered with a single input processing system.&lt;/p&gt;
 
 &lt;p&gt;&lt;div style=&#34;float: right; position: relative; width: 40%;&#34;&gt;
     &lt;div&gt;
-        &lt;img src=&#34;/gifs/physX%20debugger.gif&#34; style=&#34;display: block;
+        &lt;img src=&#34;/gifs/physXdebugger.gif&#34; style=&#34;display: block;
   width: 100%;
              
              margin: 0% 0% 0% 0%;&#34;/&gt;
@@ -120,11 +133,11 @@ The interfaced followed the listener pattern. That is to say in order to recieve
     &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 0%;&#34;&gt;The PhysX debugger could be used to debug the physics scene.&lt;/div&gt;
     
 &lt;/div&gt;
-&lt;strong&gt;PhysX:&lt;/strong&gt; Our physX implementation exposed most of the physx functionalities. Such as collision filtering and raycasts. It would also send out callback in a unity style interface but then written in C++. All most common collision shapes where supported
-i.e. Capsule, Sphere, Box, Mesh, Convex hull and height maps. In debug mode the PhysX visual debugger could be attached to view and debug the physics scene.&lt;/p&gt;
+&lt;strong&gt;PhysX:&lt;/strong&gt; Our PhysX implementation exposed most of the PhysX functionalities. Such as collision filtering and ray casts. It would also send out callback in a unity style interface but then written in C++. All most common collision shapes where supported
+i.e. Capsule, Sphere, Box, Mesh, Convex hull and height maps. In debug mode, the PhysX visual debugger could be attached to view and debug the physics scene.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Gameplay Features:&lt;/strong&gt; With regards to gameplay I was responsible for one of the easrly iterations of the vehicle behaviour. Besides that, I also worked on the lap system that was build in the engine and on the differnt object types that are available in the engine.
-We did not use an entity component system like unity because of time constraints and the spefic target game of the engine could do without.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gameplay Features:&lt;/strong&gt; With regards to gameplay I was responsible for one of the early iterations of the vehicle behavior. Besides that, I also worked on the lap system that was built in the engine and on the different object types that are available in the engine.
+We did not use an entity component system like unity because of time constraints and the specific target game of the engine could do without.&lt;/p&gt;
 </description>
     </item>
     
@@ -137,15 +150,15 @@ We did not use an entity component system like unity because of time constraints
       <description>&lt;p&gt;Project sulphur can be subdivided into 3 catagories: engine, builder and editor. &lt;br&gt;
 &lt;ul&gt;
     &lt;li&gt;&lt;strong&gt;The engine:&lt;/strong&gt; is the library with all the functionality required to run the game such as rendering, physics, networking etc&amp;hellip; This is completely written in C++.
-    &lt;li&gt;&lt;strong&gt;The builder:&lt;/strong&gt; is a standalone command line tool that is used to package raw assets into game ready formats used by the engine. Like the enigne this is written in C++.
-    &lt;li&gt;&lt;strong&gt;The editor:&lt;/strong&gt; is the enviroment where the engines features are exposed in a user friendly interface. This is where you can create your game projects, levels etc&amp;hellip; The editor is mainly written in C#/xaml but uses some DLLs written in C++.
+    &lt;li&gt;&lt;strong&gt;The builder:&lt;/strong&gt; is a standalone command line tool that is used to package raw assets into game-ready formats used by the engine. Like the engine, this is written in C++.
+    &lt;li&gt;&lt;strong&gt;The editor:&lt;/strong&gt; is the environment where the features of the engine are exposed in a user-friendly interface. This is where you can create your game projects, levels etc&amp;hellip; The editor is mainly written in C#/xaml but uses some DLLs written in C++.
 &lt;/ul&gt;&lt;/p&gt;
 
 &lt;div style=&#34;position: relative;&#34;&gt;
     
     &lt;strong&gt;Engine work:&lt;/strong&gt; My main work on the engine is on the interfaces that allow the engine to communicate with the engine. The engine is connected to the editor via the network.
-This means that the engine you see in the editor is its own seperate process. Another benefit of this connection is that we could in theory launch a second or even a third engine in editor mode and have all engines connect to a single editor instance.
-These other versions could run on other machines such as a PS4 devkit. This in turn would then allow for simultanious testing and developing for multiple platforms without having to switch around platforms or create a build before testing.
+This means that the engine you see in the editor is its own separate process. Another benefit of this connection is that we could, in theory, launch a second or even a third engine in editor mode and have all engines connect to a single editor instance.
+These other versions could run on other machines such as a PS4 devkit. This, in turn, would then allow for simultaneous testing and developing for multiple platforms without having to switch around platforms or create a build before testing.
     
 &lt;/div&gt;
 
@@ -163,8 +176,8 @@ These other versions could run on other machines such as a PS4 devkit. This in t
 &lt;/div&gt;
 &lt;div style=&#34;position: relative;&#34;&gt;
     
-    &lt;strong&gt;Builder work:&lt;/strong&gt; With the builder I mainly worked on the command line interfaces. These interfaces allow other programmers to easely add commands with flags and arguments to the builder. I was also responsible for doing the shader pipeline.
-The shader pipeline takes in a shader written in hlsl with some custom definitions. This single file is then converted into a shader package that can be loaded by the engine and used to render with Directx12, Vulkan and GNM(PS4).
+    &lt;strong&gt;Builder work:&lt;/strong&gt; With the builder I mainly worked on the command line interfaces. These interfaces allow other programmers to easily add commands with flags and arguments to the builder. I was also responsible for doing the shader pipeline.
+The shader pipeline takes in a shader written in hlsl with some custom definitions. This single file is then converted into a shader package that can be loaded by the engine and used to render with Directx12, Vulkan, and GNM(PS4).
     
 &lt;/div&gt;&lt;/p&gt;
 
@@ -182,11 +195,11 @@ The shader pipeline takes in a shader written in hlsl with some custom definitio
 &lt;/div&gt;
 &lt;div style=&#34;position: relative;&#34;&gt;
     
-    &lt;p&gt;&lt;strong&gt;Editor work:&lt;/strong&gt; Most of my contribution in this project was with the editor. I wrote the interface and utility classes that allow the editor to recieve, process and send messages to connected engines.
-I also wrote an interface that allows controls and systems to be developed completely seperate whilst still being able to act upon actions or event that happen in different systems. Besides this I was resonsinsible for creating the world view, asset browser, logger, and menu bar.
+    &lt;p&gt;&lt;strong&gt;Editor work:&lt;/strong&gt; Most of my contribution in this project was with the editor. I wrote the interface and utility classes that allow the editor to receive, process and send messages to connected engines.
+I also wrote an interface that allows controls and systems to be developed completely separate whilst still being able to act upon actions or event that happen in different systems. Besides this, I was responsible for creating the world-view, asset browser, logger, and menu bar.
 The editor also has a project pipeline allowing you to set up multiple game projects. Each project can be shared with other people since all paths are relative.&lt;/p&gt;
 
-&lt;p&gt;Under the hood the editor uses a DLL version of the sulphur builder. I worked on exposing the sulphur builder(written in C++) functionality to C# so it can be used by the editor.&lt;/p&gt;
+&lt;p&gt;Under the hood, the editor uses a DLL version of the sulphur builder. I worked on exposing the sulphur builder(written in C++) functionality to C# so it can be used by the editor.&lt;/p&gt;
 
     
 &lt;/div&gt;&lt;/p&gt;
@@ -199,7 +212,7 @@ The editor also has a project pipeline allowing you to set up multiple game proj
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/abduckted/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;UI:&lt;/strong&gt; With the UI I was responsible for implmenting the score counter, the item bar and the win / lose screens. I also did the drag and drop behaviour for the towers. The placing was done by doing a simple ray from the mouse
+      <description>&lt;p&gt;&lt;strong&gt;UI:&lt;/strong&gt; With the UI I was responsible for implementing the score counter, the item bar, and the win / lose screens. I also did the drag and drop behavior for the towers. The placing was done by doing a simple ray from the mouse
 into the scene and check against the grid.&lt;/p&gt;
 </description>
     </item>
@@ -210,11 +223,11 @@ into the scene and check against the grid.&lt;/p&gt;
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>/project/nimby/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Leaf Spawing:&lt;/strong&gt; For the leaf spawing I made a script that would spawn leaves at a random position in a circle. The script allowed the designers to tweak the spawnrate of the leaves. Besides the spawnrate it was
-also posible to restrict the spawning to a querter cirel, a half circle and a three quarter circle. It was also possible to specify a minumum radius thus spwning leaves in adunot shape.Each level also had a spawner manager.
-This object would controll all spawners to make sure that the maximum amount of spawned leaves on the entire field would not exceed a certain threshold.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Leaf Spawning:&lt;/strong&gt; For the leaf spawning I made a script that would spawn leaves at a random position in a circle. The script allowed the designers to tweak the spawn rate of the leaves. Besides the spawn rate, it was
+also possible to restrict the spawning to a quarter circle, a half circle, and a three-quarter circle. It was also possible to specify a minimum radius thus spawning leaves in adult shape. Each level also had a spawner manager.
+This object would control all spawners to make sure that the maximum amount of spawned leaves on the entire field would not exceed a certain threshold.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Leaf behaviour / leaf blower:&lt;/strong&gt; The leaf behaviour was done by appling a velocity based on the angle between the player forward vector and the vector from the leaf to the player. Also the closer the player
+&lt;p&gt;&lt;strong&gt;Leaf behavior/leaf blower:&lt;/strong&gt; The leaf behavior was done by applying a velocity based on the angle between the player forward vector and the vector from the leaf to the player. Also the closer the player
 to the leaf the higher the magnitude of the force. A random rotation was also applied to the leaf to make a bit more visually appealing.&lt;/p&gt;
 </description>
     </item>

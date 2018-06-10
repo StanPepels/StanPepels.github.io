@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/project/custom-physics/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/project/dear-father/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
@@ -154,6 +163,16 @@
     
       <loc>/tags/hugo/</loc>
       <lastmod>2017-09-03T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/personal/</loc>
+      <lastmod>2017-03-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
