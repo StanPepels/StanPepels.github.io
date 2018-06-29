@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Stan Pepels</title>
-    <link>/post/</link>
+    <link>https://stanpepels.github.io/post/</link>
     <description>Recent content in Posts on Stan Pepels</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Choosing a framework for tool development</title>
-      <link>/post/tools-framework/</link>
+      <link>https://stanpepels.github.io/post/tools-framework/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/post/tools-framework/</guid>
+      <guid>https://stanpepels.github.io/post/tools-framework/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -166,19 +166,19 @@ In the end, I decided to go with WPF since I have the time to develop the tools 
     
     <item>
       <title>Custom Physics</title>
-      <link>/post/custom-physics/</link>
+      <link>https://stanpepels.github.io/post/custom-physics/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/post/custom-physics/</guid>
+      <guid>https://stanpepels.github.io/post/custom-physics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools for fools</title>
-      <link>/post/tools-for-fools/</link>
+      <link>https://stanpepels.github.io/post/tools-for-fools/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/post/tools-for-fools/</guid>
+      <guid>https://stanpepels.github.io/post/tools-for-fools/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;

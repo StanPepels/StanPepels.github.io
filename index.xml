@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stan Pepels on Stan Pepels</title>
-    <link>/</link>
+    <link>https://stanpepels.github.io/</link>
     <description>Recent content in Stan Pepels on Stan Pepels</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Custom physics</title>
-      <link>/project/custom-physics/</link>
+      <link>https://stanpepels.github.io/project/custom-physics/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/custom-physics/</guid>
+      <guid>https://stanpepels.github.io/project/custom-physics/</guid>
       <description>&lt;p&gt;&lt;strong&gt;2D Physics engine:&lt;/strong&gt; The 2D physics engine uses impulse based collision resolution to resolve things like linear velocity, angular velocity and friction. In order to do collision I could&amp;rsquo;ve used the seperating axis theorem but instead decided to go for GJK to challange myself (SAT would&amp;rsquo;ve been faster and more performant however).
 For a broadphase collision detection I went for a simple quadtree due to project time constraints. The supported colliders are sphere, box and convex hull.&lt;/p&gt;
 
@@ -25,10 +25,10 @@ For a broadphase collision detection I went for a simple quadtree due to project
     
     <item>
       <title>dear father</title>
-      <link>/project/dear-father/</link>
+      <link>https://stanpepels.github.io/project/dear-father/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/dear-father/</guid>
+      <guid>https://stanpepels.github.io/project/dear-father/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Dialogue tree tool:&lt;/strong&gt; Most of my work during this short project went towards creating a tool for the designers to implement their dialogues. The decision to make a tool
 in such a short-term project came from the fact that this entire game is based on dialogues. The dialogue tree itself is an extension of unreal behavior trees.
 We made a couple of custom nodes.
@@ -46,10 +46,10 @@ leftmost node. This process would then be repeated to build the entire dialogue.
     
     <item>
       <title>orbis</title>
-      <link>/project/orbis/</link>
+      <link>https://stanpepels.github.io/project/orbis/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/orbis/</guid>
+      <guid>https://stanpepels.github.io/project/orbis/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Controller:&lt;/strong&gt; The main responsibility of the controller that I had was the input. The main issue that we faced with the input was that we needed to capture the separate input from multiple mice.
 This was achieved with help from a third party library. Besides doing the input I also had a hand in building the actual controller.&lt;/p&gt;
 
@@ -60,10 +60,10 @@ I would determine the total amount of force used to bump the other player away. 
     
     <item>
       <title>clouded</title>
-      <link>/project/clouded/</link>
+      <link>https://stanpepels.github.io/project/clouded/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/clouded/</guid>
+      <guid>https://stanpepels.github.io/project/clouded/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Cloud behaviour:&lt;/strong&gt; The movement of the cloud particles was achieved using a vector field. This field is then manipulated by holding a button on the Vive controller and dragging it around the air.
 In order to smooth out the movement, a simple box blur is applied to the vector field.&lt;/p&gt;
 
@@ -80,73 +80,11 @@ some intuitive controls to menus that did not require any pointing of lasers at 
     </item>
     
     <item>
-      <title>AGR</title>
-      <link>/project/agr/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/project/agr/</guid>
-      <description>&lt;p&gt;&lt;div style=&#34;float: right; position: relative; width: 40%;&#34;&gt;
-    &lt;div&gt;
-        &lt;img src=&#34;/img/AGR/Maya%20engine%20attributes.png&#34; style=&#34;display: block;
-  width: 100%;
-             
-             margin: 2% 0% 0% 0%;&#34;/&gt;
-                                      
-    &lt;/div&gt;
-    
-    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 0%;&#34;&gt;Custom attributes added to a Maya root object&lt;/div&gt;
-    
-&lt;/div&gt;
-&lt;strong&gt;Maya C++ plugin&lt;/strong&gt; My main work on this project was done on the Maya plugin. When this plugin is installed together with the Houdini tools our artists provided it would extend Maya by giving objects extra attributes.
-These attributes are engine features such as collision shapes/dimensions, setting collision layers, setting the object types etc. Besides this, it came with an exporter. This would use the Houdini tools to generate the collision mesh and
-visual mesh of the track. This would also generate all the waypoints used by the lap system in the engine. In order to allow for jumps, a designer could create multiple &amp;lsquo;tracks&amp;rsquo; in the same level and link them up using the Maya node editor.&lt;/p&gt;
-
-&lt;p&gt;The export has 2 settings, Debug and Release. Debug would use the collision mesh as its visual mesh thus reducing the export time by a lot.
-In order to speed up export, even more, the export was multithreaded since the number of vertices put out by Houdini could be a lot depending on the Houdini tool settings the designer used
-(before multithreading a release export could take up to 2.5 min with 3.3 million vertices. After the multithreading the same export took 41 seconds).
-The outputted file is a binary file that could be fed directly to the engine.
-&lt;div style=&#34;float: right; position: relative; width: 100%;&#34;&gt;
-    &lt;div&gt;
-        &lt;img src=&#34;/img/AGR/May-nodes.png&#34; style=&#34;display: block;
-  width: 100%;
-             
-             margin: 0% 0% 0% 0%;&#34;/&gt;
-                                      
-    &lt;/div&gt;
-    
-    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 3%;&#34;&gt;Multiple track parts could be linked up to create one coherent track. This allowed for jumps and splits. The voodoo track nodes were created by the plugin and would take a Houdini tool object as input.&lt;/div&gt;
-    
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; For the input I wrote an interface that works cross-platform for both PC and PS4 although the game could only be played using a controller. On windows, I used Xinput for handling controller support. The mouse and keyboard were used to tweak the game with ImGui
-The interfaced followed the listener pattern. That is to say in order to receive input an object had to be registered with a single input processing system.&lt;/p&gt;
-
-&lt;p&gt;&lt;div style=&#34;float: right; position: relative; width: 40%;&#34;&gt;
-    &lt;div&gt;
-        &lt;img src=&#34;/gifs/physXdebugger.gif&#34; style=&#34;display: block;
-  width: 100%;
-             
-             margin: 0% 0% 0% 0%;&#34;/&gt;
-                                      
-    &lt;/div&gt;
-    
-    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 0%;&#34;&gt;The PhysX debugger could be used to debug the physics scene.&lt;/div&gt;
-    
-&lt;/div&gt;
-&lt;strong&gt;PhysX:&lt;/strong&gt; Our PhysX implementation exposed most of the PhysX functionalities. Such as collision filtering and ray casts. It would also send out callback in a unity style interface but then written in C++. All most common collision shapes where supported
-i.e. Capsule, Sphere, Box, Mesh, Convex hull and height maps. In debug mode, the PhysX visual debugger could be attached to view and debug the physics scene.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gameplay Features:&lt;/strong&gt; With regards to gameplay I was responsible for one of the early iterations of the vehicle behavior. Besides that, I also worked on the lap system that was built in the engine and on the different object types that are available in the engine.
-We did not use an entity component system like unity because of time constraints and the specific target game of the engine could do without.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>project sulphur</title>
-      <link>/project/project-sulphur/</link>
+      <link>https://stanpepels.github.io/project/project-sulphur/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/project-sulphur/</guid>
+      <guid>https://stanpepels.github.io/project/project-sulphur/</guid>
       <description>&lt;p&gt;Project sulphur can be subdivided into 3 catagories: engine, builder and editor. &lt;br&gt;
 &lt;ul&gt;
     &lt;li&gt;&lt;strong&gt;The engine:&lt;/strong&gt; is the library with all the functionality required to run the game such as rendering, physics, networking etc&amp;hellip; This is completely written in C++.
@@ -164,7 +102,7 @@ These other versions could run on other machines such as a PS4 devkit. This, in 
 
 &lt;p&gt;&lt;div style=&#34;float: right; position: relative; width: 50%;&#34;&gt;
     &lt;div&gt;
-        &lt;img src=&#34;/gifs/sulphur-builder.gif&#34; style=&#34;display: block;
+        &lt;img src=&#34;https://stanpepels.github.io/gifs/sulphur-builder.gif&#34; style=&#34;display: block;
   width: 100%;
              
              margin: 5% 0% 0% 0%;&#34;/&gt;
@@ -183,7 +121,7 @@ The shader pipeline takes in a shader written in hlsl with some custom definitio
 
 &lt;p&gt;&lt;div style=&#34;float: left; position: relative; width: 50%;&#34;&gt;
     &lt;div&gt;
-        &lt;img src=&#34;/gifs/sulphur-editor.gif&#34; style=&#34;display: block;
+        &lt;img src=&#34;https://stanpepels.github.io/gifs/sulphur-editor.gif&#34; style=&#34;display: block;
   width: 100%;
              
              margin: 3% 0% 0% -3%;&#34;/&gt;
@@ -207,11 +145,73 @@ The editor also has a project pipeline allowing you to set up multiple game proj
     </item>
     
     <item>
+      <title>AGR</title>
+      <link>https://stanpepels.github.io/project/agr/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanpepels.github.io/project/agr/</guid>
+      <description>&lt;p&gt;&lt;div style=&#34;float: right; position: relative; width: 40%;&#34;&gt;
+    &lt;div&gt;
+        &lt;img src=&#34;https://stanpepels.github.io/img/AGR/Maya%20engine%20attributes.png&#34; style=&#34;display: block;
+  width: 100%;
+             
+             margin: 2% 0% 0% 0%;&#34;/&gt;
+                                      
+    &lt;/div&gt;
+    
+    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 0%;&#34;&gt;Custom attributes added to a Maya root object&lt;/div&gt;
+    
+&lt;/div&gt;
+&lt;strong&gt;Maya C++ plugin&lt;/strong&gt; My main work on this project was done on the Maya plugin. When this plugin is installed together with the Houdini tools our artists provided it would extend Maya by giving objects extra attributes.
+These attributes are engine features such as collision shapes/dimensions, setting collision layers, setting the object types etc. Besides this, it came with an exporter. This would use the Houdini tools to generate the collision mesh and
+visual mesh of the track. This would also generate all the waypoints used by the lap system in the engine. In order to allow for jumps, a designer could create multiple &amp;lsquo;tracks&amp;rsquo; in the same level and link them up using the Maya node editor.&lt;/p&gt;
+
+&lt;p&gt;The export has 2 settings, Debug and Release. Debug would use the collision mesh as its visual mesh thus reducing the export time by a lot.
+In order to speed up export, even more, the export was multithreaded since the number of vertices put out by Houdini could be a lot depending on the Houdini tool settings the designer used
+(before multithreading a release export could take up to 2.5 min with 3.3 million vertices. After the multithreading the same export took 41 seconds).
+The outputted file is a binary file that could be fed directly to the engine.
+&lt;div style=&#34;float: right; position: relative; width: 100%;&#34;&gt;
+    &lt;div&gt;
+        &lt;img src=&#34;https://stanpepels.github.io/img/AGR/May-nodes.png&#34; style=&#34;display: block;
+  width: 100%;
+             
+             margin: 0% 0% 0% 0%;&#34;/&gt;
+                                      
+    &lt;/div&gt;
+    
+    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 3%;&#34;&gt;Multiple track parts could be linked up to create one coherent track. This allowed for jumps and splits. The voodoo track nodes were created by the plugin and would take a Houdini tool object as input.&lt;/div&gt;
+    
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; For the input I wrote an interface that works cross-platform for both PC and PS4 although the game could only be played using a controller. On windows, I used Xinput for handling controller support. The mouse and keyboard were used to tweak the game with ImGui
+The interfaced followed the listener pattern. That is to say in order to receive input an object had to be registered with a single input processing system.&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;float: right; position: relative; width: 40%;&#34;&gt;
+    &lt;div&gt;
+        &lt;img src=&#34;https://stanpepels.github.io/gifs/physXdebugger.gif&#34; style=&#34;display: block;
+  width: 100%;
+             
+             margin: 0% 0% 0% 0%;&#34;/&gt;
+                                      
+    &lt;/div&gt;
+    
+    &lt;div style=&#34;text-align: center; font-size: 70%; margin-bottom: 0%;&#34;&gt;The PhysX debugger could be used to debug the physics scene.&lt;/div&gt;
+    
+&lt;/div&gt;
+&lt;strong&gt;PhysX:&lt;/strong&gt; Our PhysX implementation exposed most of the PhysX functionalities. Such as collision filtering and ray casts. It would also send out callback in a unity style interface but then written in C++. All most common collision shapes where supported
+i.e. Capsule, Sphere, Box, Mesh, Convex hull and height maps. In debug mode, the PhysX visual debugger could be attached to view and debug the physics scene.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Gameplay Features:&lt;/strong&gt; With regards to gameplay I was responsible for one of the early iterations of the vehicle behavior. Besides that, I also worked on the lap system that was built in the engine and on the different object types that are available in the engine.
+We did not use an entity component system like unity because of time constraints and the specific target game of the engine could do without.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>AbDuckTed</title>
-      <link>/project/abduckted/</link>
+      <link>https://stanpepels.github.io/project/abduckted/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/abduckted/</guid>
+      <guid>https://stanpepels.github.io/project/abduckted/</guid>
       <description>&lt;p&gt;&lt;strong&gt;UI:&lt;/strong&gt; With the UI I was responsible for implementing the score counter, the item bar, and the win / lose screens. I also did the drag and drop behavior for the towers. The placing was done by doing a simple ray from the mouse
 into the scene and check against the grid.&lt;/p&gt;
 </description>
@@ -219,10 +219,10 @@ into the scene and check against the grid.&lt;/p&gt;
     
     <item>
       <title>NIMBY</title>
-      <link>/project/nimby/</link>
+      <link>https://stanpepels.github.io/project/nimby/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/nimby/</guid>
+      <guid>https://stanpepels.github.io/project/nimby/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Leaf Spawning:&lt;/strong&gt; For the leaf spawning I made a script that would spawn leaves at a random position in a circle. The script allowed the designers to tweak the spawn rate of the leaves. Besides the spawn rate, it was
 also possible to restrict the spawning to a quarter circle, a half circle, and a three-quarter circle. It was also possible to specify a minimum radius thus spawning leaves in adult shape. Each level also had a spawner manager.
 This object would control all spawners to make sure that the maximum amount of spawned leaves on the entire field would not exceed a certain threshold.&lt;/p&gt;
@@ -234,10 +234,10 @@ to the leaf the higher the magnitude of the force. A random rotation was also ap
     
     <item>
       <title>Choosing a framework for tool development</title>
-      <link>/post/tools-framework/</link>
+      <link>https://stanpepels.github.io/post/tools-framework/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/post/tools-framework/</guid>
+      <guid>https://stanpepels.github.io/post/tools-framework/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -388,19 +388,19 @@ In the end, I decided to go with WPF since I have the time to develop the tools 
     
     <item>
       <title>Custom Physics</title>
-      <link>/post/custom-physics/</link>
+      <link>https://stanpepels.github.io/post/custom-physics/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/post/custom-physics/</guid>
+      <guid>https://stanpepels.github.io/post/custom-physics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools for fools</title>
-      <link>/post/tools-for-fools/</link>
+      <link>https://stanpepels.github.io/post/tools-for-fools/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/post/tools-for-fools/</guid>
+      <guid>https://stanpepels.github.io/post/tools-for-fools/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
