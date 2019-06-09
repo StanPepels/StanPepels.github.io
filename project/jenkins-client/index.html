@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="author" content="Stan Pepels">
+  <meta name="description" content="Game Tools / Engine programmer">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://stanpepels.github.io/project/jenkins-client/">
+
+  
+  
+
+
+  
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="https://stanpepels.github.io/index.xml" type="application/rss+xml" title="Stan Pepels">
+  <link rel="feed" href="https://stanpepels.github.io/index.xml" type="application/rss+xml" title="Stan Pepels">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://stanpepels.github.io/project/jenkins-client/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Stan Pepels">
+  <meta property="og:url" content="https://stanpepels.github.io/project/jenkins-client/">
+  <meta property="og:title" content="jenkins client | Stan Pepels">
+  <meta property="og:description" content=""><meta property="og:image" content="https://stanpepels.github.io/img/headers/jenkins.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-03-20T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2017-03-20T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>jenkins client | Stan Pepels</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Stan Pepels</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+  
+<div class="article-header">
+  <img src="/img/headers/jenkins.png" class="article-banner" itemprop="image">
+  
+</div>
+
+
+
+  <div class="article-container">
+    <div class="pub-title">
+      <h1 itemprop="name">jenkins client</h1>
+      <span class="pub-authors" itemprop="author">&nbsp;</span>
+    </div>
+
+    
+    <div class="slideshow-container">
+      
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 1 / 3</div>
+        
+        <img src="/slideshows/jenkins-client/slide1.png" style="width:100%">
+         <div class="text">The client shows the exposed triggers and the current builds active / queued</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 2 / 3</div>
+        
+        <img src="/slideshows/jenkins-client/slide2.png" style="width:100%">
+         <div class="text">Its possible to create presets from exising triggers</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 3 / 3</div>
+        
+        <img src="/slideshows/jenkins-client/slide3.png" style="width:100%">
+         <div class="text">You can queue a build from the created presets and trigger a build from them directly</div>
+        
+      </div>
+      
+      
+      <a class="prev_btn" id="slideshow_btn" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next_btn" id="slideshow_btn" onclick="plusSlides(1)">&#10095;</a>
+      
+    </div>
+    <div style="text-align:center">
+      
+      <span class="dot" onclick="currentSlide( 0 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 1 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 2 )"></span>
+      
+    </div>
+    
+
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          
+        </div>
+        <div class="col-md-2">
+          
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <div>
+      <h2>Summary</h2>
+      The jenkins client aims to simplify triggering jenkins build by users unfamiliar with the jenkins UI / systems. This seperates the developer platform and user platform ans thus minimizing the risk of users altering settings they should not be able to alter. In addition to this it exposes a bit more information about a build currently active or in the queue.
+      
+    </div>
+    <div class="container">
+      <div class="row tools">
+        <div class="col-md-4">
+          <h2>Contributions</h2>
+          <ul>
+            
+            <li>Everything (Personal Project)</li>
+            
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2>Tools Used</h2>
+          <div class="row tools">
+
+
+            
+            
+            <div class="column tools_column">
+              
+              
+              <div class="logo_card">
+                <a href="https://www.visualstudio.com/" target="_blank">
+                  <img src="/img/icons/visual-studio.png" class="icon">
+                </a>
+                <div class="card-text">
+                  visual studio
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/" target="_blank">
+                  <img src="/img/icons/wpf.png" class="icon">
+                </a>
+                <div class="card-text">
+                  wpf
+                </div>
+              </div>
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="http://www.stack.nl/~dimitri/doxygen/" target="_blank">
+                  <img src="/img/icons/doxygen.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Doxygen
+                </div>
+              </div>
+              
+              
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h2>Team</h2>
+          <p>
+            
+            Programmers: 1 <br>
+            
+          </p>
+          
+          <h2>Project length</h2>
+          <p>
+            2 weeks
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="article-style" itemprop="articleBody">
+
+      <h2>Details</h2>
+      <p>The inspiration to create this little app came from the my experience with jenkins during my intership.
+Here I worked with jenkins a lot and the main drawback I found was the user interaction for users who are not fammiliar with jenkins itself.</p>
+
+<p>This app simplifies trigering builds by presenting only the info relevant to the end users.
+The client has the following functionality.
+<ul>
+    <li> Easy exposing of jobs to the client using jenkins views
+    <li> Easy access to different kinds of jobs you can trigger
+    <li> The option to save a preset of variables
+  <li> A more detailed view of the current jobs in progress / queued filtered by view.
+</ul></p>
+
+<p>There are some things I would like to still add to this. Namely
+<ul>
+    <li> Support for freestyle jobs
+    <li> Support for multibranch pipelines
+  <li> Support for jenkins users
+</ul></p>
+
+    </div>
+
+    <p class="project-download">
+      
+      
+      <a href="https://github.com/StanPepels/StanPepels.github.io/blob/master/builds/JenkinsClient.zip?raw=true" class="btn btn-primary btn-outline">
+        Download
+      </a>
+      
+      
+    </p>
+  </div>
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://stanpepels.github.io/project/project-sulphur/"><span
+      aria-hidden="true">&larr;</span> Previous</a></li>
+    
+
+    
+    <li class="next"><a href="https://stanpepels.github.io/project/cross-platform-vs-generator/">Next <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<script>
+  var snippetIndex = 1;
+  showSnippets(snippetIndex)
+  toggleSnippets()
+
+  function showSnippets(n) {
+    var i;
+    var slides = document.getElementsByClassName("snippet");
+    if (slides.length == 0) {
+      return;
+    }
+
+
+    var dots = document.getElementsByClassName("snippet_dot");
+    if (n > slides.length) { snippetIndex = 1 }
+    if (n < 1) { snippetIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[snippetIndex - 1].style.display = "block";
+    dots[snippetIndex - 1].className += " dot_active";
+  }
+
+  function plusSnippet(n) {
+    showSnippets(snippetIndex += n);
+  }
+
+  function currentSnippet(n) {
+    showSnippets(snippetIndex = n + 1);
+  }
+
+
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function toggleSnippets() {
+    var btns = document.getElementsByClassName("snippet-toggle");
+    for (i = 0; i < btns.length; i++) {
+      if (btns[i].classList.contains("active")) {
+        btns[i].classList.remove("active");
+      }
+      else {
+        btns[i].className += " active";
+      }
+    }
+
+
+
+    var containers = document.getElementsByClassName("snippet-container");
+    for (i = 0; i < containers.length; i++) {
+      if (containers[i].style.display != "none") {
+        containers[i].style.display = "none";
+      }
+      else if (containers[i].style.display == "none") {
+        containers[i].style.display = "block";
+      }
+    }
+  }
+
+
+
+
+  function stopVideo(element) {
+    var wrapper = element.querySelector('.videoWrapper');
+
+    if (wrapper) {
+      var iframe = element.querySelector('iframe');
+      var video = element.querySelector('video');
+      if (iframe) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+      }
+      if (video) {
+        video.pause();
+      }
+    }
+  };
+
+  function plusSlides(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex = n + 1);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " dot_active";
+  }
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Your Name &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

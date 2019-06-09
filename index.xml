@@ -80,6 +80,91 @@ some intuitive controls to menus that did not require any pointing of lasers at 
     </item>
     
     <item>
+      <title>Jenkins (At Triuph Studios)</title>
+      <link>https://stanpepels.github.io/project/jenkins/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanpepels.github.io/project/jenkins/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Builds:&lt;/strong&gt; with builds I helped adding / maintaining support for Console and the various PC ditribution platforms. I also helped with setting up support for patches (console) or incremental builds (PC).
+Besides this I worked on making the builds automated either triggered periodically or based on scm (source control management) commits.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Deployment:&lt;/strong&gt; My contribution to the deployment pipeline is similar to that of the build pipeline. The added option here is that I helped adding support for uploading to a remote ftp / sftp server.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Slack:&lt;/strong&gt; Slack is used to relay information about the builds to the other developers. Here I helped setting up the system that allows other developers to easely retrieve builds created to improve turnaround time for getting a stable build.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Toolset:&lt;/strong&gt; I Helped setup the supplementary toolset. this toolset allows among others the remote triggering of builds and the installing of builds from a server via the command line.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Automated tests:&lt;/strong&gt; With regards to automated tests I contributed to setting up and maintaining a system that runs tests on a seperate machine. The results of these tests are made available via the same system as the builds so they can be accessed easely by other developers.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cross platform VS generator</title>
+      <link>https://stanpepels.github.io/project/cross-platform-vs-generator/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanpepels.github.io/project/cross-platform-vs-generator/</guid>
+      <description>&lt;p&gt;This project started out as a little experiment from one of the my previous school projects. Here we used a similar generator to generate projects for ps4 and windows. I wanted to expand on this and make it more user friendly / custimizable.
+I wrote this application from scratch (i.e I didn&amp;rsquo;t huse any code from the previous project). in addition to being able to generate cross platform I added the following things.&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt; The option to edit / modify the variables yourself
+    &lt;li&gt; The option to execute post - generate commands
+    &lt;li&gt; The option to import / export settings
+  &lt;li&gt; Integrated perforce
+  &lt;li&gt; The option to deploy the application. This puts out a zip file with a version of the app that has all edit functionality stripped. this gives the end users a version that is much easier to understand and use.
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>jenkins client</title>
+      <link>https://stanpepels.github.io/project/jenkins-client/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanpepels.github.io/project/jenkins-client/</guid>
+      <description>&lt;p&gt;The inspiration to create this little app came from the my experience with jenkins during my intership.
+Here I worked with jenkins a lot and the main drawback I found was the user interaction for users who are not fammiliar with jenkins itself.&lt;/p&gt;
+
+&lt;p&gt;This app simplifies trigering builds by presenting only the info relevant to the end users.
+The client has the following functionality.
+&lt;ul&gt;
+    &lt;li&gt; Easy exposing of jobs to the client using jenkins views
+    &lt;li&gt; Easy access to different kinds of jobs you can trigger
+    &lt;li&gt; The option to save a preset of variables
+  &lt;li&gt; A more detailed view of the current jobs in progress / queued filtered by view.
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;There are some things I would like to still add to this. Namely
+&lt;ul&gt;
+    &lt;li&gt; Support for freestyle jobs
+    &lt;li&gt; Support for multibranch pipelines
+  &lt;li&gt; Support for jenkins users
+&lt;/ul&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>project sulphur</title>
       <link>https://stanpepels.github.io/project/project-sulphur/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
@@ -99,6 +184,7 @@ This means that the engine you see in the editor is its own separate process. An
 These other versions could run on other machines such as a PS4 devkit. This, in turn, would then allow for simultaneous testing and developing for multiple platforms without having to switch around platforms or create a build before testing.
     
 &lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;div style=&#34;float: right; position: relative; width: 50%;&#34;&gt;
     &lt;div&gt;
@@ -117,7 +203,8 @@ These other versions could run on other machines such as a PS4 devkit. This, in 
     &lt;strong&gt;Builder work:&lt;/strong&gt; With the builder I mainly worked on the command line interfaces. These interfaces allow other programmers to easily add commands with flags and arguments to the builder. I was also responsible for doing the shader pipeline.
 The shader pipeline takes in a shader written in hlsl with some custom definitions. This single file is then converted into a shader package that can be loaded by the engine and used to render with Directx12, Vulkan, and GNM(PS4).
     
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;div style=&#34;float: left; position: relative; width: 50%;&#34;&gt;
     &lt;div&gt;
@@ -140,7 +227,8 @@ The editor also has a project pipeline allowing you to set up multiple game proj
 &lt;p&gt;Under the hood, the editor uses a DLL version of the sulphur builder. I worked on exposing the sulphur builder(written in C++) functionality to C# so it can be used by the editor.&lt;/p&gt;
 
     
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -203,6 +291,42 @@ i.e. Capsule, Sphere, Box, Mesh, Convex hull and height maps. In debug mode, the
 
 &lt;p&gt;&lt;strong&gt;Gameplay Features:&lt;/strong&gt; With regards to gameplay I was responsible for one of the early iterations of the vehicle behavior. Besides that, I also worked on the lap system that was built in the engine and on the different object types that are available in the engine.
 We did not use an entity component system like unity because of time constraints and the specific target game of the engine could do without.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Age of wonders Planetfall</title>
+      <link>https://stanpepels.github.io/project/age-of-wonders-planetfall/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanpepels.github.io/project/age-of-wonders-planetfall/</guid>
+      <description>&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Gameplay:&lt;/strong&gt; With regards to gameplay I helped setting up the tutorial messages. And the underlying system that triggers / handles them.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Audio:&lt;/strong&gt; For Audio I contributed to the system that triggers voice over events and I worked on implmenting various audio events such as the quest completed sound.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Tools:&lt;/strong&gt; With tools I provided tools to help optimize / debug the game. besides this I worked on various tools for the gameplay systems and helped getting the modding tools shippable.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;position: relative;&#34;&gt;
+    
+    &lt;strong&gt;Other:&lt;/strong&gt; I was also involved with general bugfixing and some UI backend.
+    
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     

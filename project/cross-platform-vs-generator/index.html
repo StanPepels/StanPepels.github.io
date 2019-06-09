@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="author" content="Stan Pepels">
+  <meta name="description" content="Game Tools / Engine programmer">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://stanpepels.github.io/project/cross-platform-vs-generator/">
+
+  
+  
+
+
+  
+
+  
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="https://stanpepels.github.io/index.xml" type="application/rss+xml" title="Stan Pepels">
+  <link rel="feed" href="https://stanpepels.github.io/index.xml" type="application/rss+xml" title="Stan Pepels">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://stanpepels.github.io/project/cross-platform-vs-generator/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Stan Pepels">
+  <meta property="og:url" content="https://stanpepels.github.io/project/cross-platform-vs-generator/">
+  <meta property="og:title" content="cross platform VS generator | Stan Pepels">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-03-20T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2017-03-20T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>cross platform VS generator | Stan Pepels</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Stan Pepels</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <div class="pub-title">
+      <h1 itemprop="name">cross platform VS generator</h1>
+      <span class="pub-authors" itemprop="author">&nbsp;</span>
+    </div>
+
+    
+    <div class="slideshow-container">
+      
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 1 / 4</div>
+        
+        <img src="/slideshows/cppg/slide1.png" style="width:100%">
+         <div class="text">The main generator screen is similar to cmake except that it only shows user variables.</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 2 / 4</div>
+        
+        <img src="/slideshows/cppg/slide2.png" style="width:100%">
+         <div class="text">Its possible to create new variables that can be used in cmake scripts</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 3 / 4</div>
+        
+        <img src="/slideshows/cppg/slide3.png" style="width:100%">
+         <div class="text">Its possible to set commands that run after cmake has generated your project</div>
+        
+      </div>
+      
+      
+      
+      <div class="mySlides slideshow_fade">
+        <div class="numbertext"> 4 / 4</div>
+        
+        <img src="/slideshows/cppg/slide4.png" style="width:100%">
+         <div class="text">Deployed app has all edit features stripped</div>
+        
+      </div>
+      
+      
+      <a class="prev_btn" id="slideshow_btn" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next_btn" id="slideshow_btn" onclick="plusSlides(1)">&#10095;</a>
+      
+    </div>
+    <div style="text-align:center">
+      
+      <span class="dot" onclick="currentSlide( 0 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 1 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 2 )"></span>
+      
+      <span class="dot" onclick="currentSlide( 3 )"></span>
+      
+    </div>
+    
+
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          
+          <a class="snippet-toggle btn btn-primary btn-large active" onclick="toggleSnippets()">code snippets</a>
+          
+        </div>
+        <div class="col-md-2">
+          
+          <a class="btn btn-primary btn-outline" href="/doxygen/cppg/index.html">Documentation</a>
+          
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="snippet-container">
+      <div class="slideshow-container">
+        
+        
+        
+        
+        <div class="snippet slideshow_fade">
+          <div class="numbertext"> 1 / 2</div>
+          <div class="codesnippet">
+            <pre><code class="cpp">
+        ﻿using System.Windows;
+using System.Windows.Controls;
+
+namespace cpg
+{
+  /**
+   * @brief Diffent kinds of supported scm systems
+   */
+  public enum Scm
+  {
+    Disabled, //!&lt; scm is disabled
+    Perforce  //!&lt; Perforce is used for source control management.
+  }
+
+  /**
+   * @class cpg.ScmSettingsEditor : Window
+   * @brief Backend for the Scm settings editor.
+   * @author Stan Pepels
+   */
+  public partial class ScmSettingsEditor : Window
+  {
+    /**
+     * @brief The settings tp be edited.
+     */
+    public ScmSettings result { get; private set; }
+
+    /**
+     * @brief Constructor that uses another setings instance to initialize the resulting settings by copieing the values.
+     * @param[in] settings (cpg.ScmSettings) The settings to copy.
+     */
+    public ScmSettingsEditor(ScmSettings settings)
+    {
+      if (settings == null)
+      {
+        Close();
+        return;
+      }
+
+      InitializeComponent();
+
+      result = new ScmSettings(settings);
+      DataContext = result;
+    }
+
+    /**
+     * @brief Callback for when the Ok button is clicked.
+     * @param[in] sender (object) The sender of the event.
+     * @param[in] e (RoutedEventArgs) Arguments send with the event
+     * @remark Closes the dialog and sets the dialog result to true. 
+     */
+    private void Ok_Click(object sender, RoutedEventArgs e)
+    {
+      DialogResult = true;
+      Close();
+    }
+
+    /**
+     * @brief Callback for when the Cancel button is clicked.
+     * @param[in] sender (object) The sender of the event.
+     * @param[in] e (RoutedEventArgs) Arguments send with the event
+     * @remark Closes the dialog and sets the dialog result to false. 
+     */
+    private void Cancel_Click(object sender, RoutedEventArgs e)
+    {
+      DialogResult = false;
+      Close();
+    }
+
+    /**
+     * @brief Callback for when the password has changed.
+     * @param[in] sender (object) The sender of the event.
+     * @param[in] e (RoutedEventArgs) Arguments send with the event
+     */
+    private void Perforce_PasswordChanged(object sender, RoutedEventArgs e)
+    {
+      PasswordBox box = sender as PasswordBox;
+      if (box != null &amp;&amp; box.DataContext == result)
+      {
+        result.password = box.Password;
+      }
+    }
+  }
+}
+
+       </code></pre>
+
+          </div>
+           <div class="text">Backend for the scm settings editor</div>
+        </div>
+        
+        
+        
+        <div class="snippet slideshow_fade">
+          <div class="numbertext"> 2 / 2</div>
+          <div class="codesnippet">
+            <pre><code class="cpp">
+        ﻿using System;
+using System.Collections.ObjectModel;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace cpg
+{
+  /**
+   * @class cpg.VariableEditor : Window
+   * @brief Back end for the variable editor
+   * @author Stan Pepels
+   */
+  public partial class VariableEditor : Window
+  {
+
+    /**
+     * @brief the variable with all modifications applied
+     */
+    public Variable result { get; private set; }
+
+    private Variable base_;                                                   //!&lt; The variable that is being edited.
+    private readonly string invalid_chars = &#34;@:\\|&amp;#!*()[] {};&#39;.&lt;&gt;?/$%~-&#43;&#34;;   //!&lt; List of chars that are forbidden in the textboxes.
+    private readonly VariableList owner_;                                     //!&lt; The owner of the variable we&#39;re editing.
+    private ulong[] ascii_mask;                                               //!&lt; Mask of invalid ascii characters created from the invalid chars string. used for validation.
+
+    /**
+     * @brief Constructor for the editor sets the appropriate datacontext and sets up callbacks
+     * @param[in] varaiable (cpg.Variable) Varibale to edit.
+     * @param[in] owner (spg.VariableList) The owner of the variable we&#39;re editing.
+     */
+    public VariableEditor(Variable variable, VariableList owner)
+    {
+      if (variable == null)
+      {
+        Close();
+        return;
+      }
+      InitializeComponent();
+
+      result = new Variable(variable);
+      base_ = variable;
+      DataContext = result;
+
+      SetupVariable(variable.type);
+      list_editor.OnListItemChanged &#43;= List_editor_OnListItemChanged;
+      owner_ = owner;
+      ascii_mask = new ulong[4];
+
+      for(int i = 0; i &lt; ascii_mask.Length; &#43;&#43;i)
+      {
+        byte[] invalid_ascii = Encoding.ASCII.GetBytes(invalid_chars);
+        foreach(byte ascii in invalid_ascii)
+        {
+          int index = ascii / 64;
+          ascii_mask[index] |= (1u &lt;&lt; (ascii % 64));
+        }
+      }
+    }
+
+    /**
+     * @brief Callback for when the value of a list item changes
+     * @param[in] sender (ListEditor) The list editor that edited the variable
+     * @param[in] new_value (string) The new value of the list item.
+     * @param[in] old_value (string) The previous value of the list item.
+     * @remark This method is only called when the variable is a list.
+     */
+    private void List_editor_OnListItemChanged(ListEditor sender, string new_value, string old_value)
+    {
+      if (sender != list_editor)
+      {
+        return;
+      }
+
+      if (result.default_value == old_value)
+      {
+        result.default_value = new_value;
+      }
+    }
+
+    /**
+     * @brief Sets up a new variable
+     * @param[in] type (cpg.VariableTypes) The type of variable to be created.
+     */
+    private void SetupVariable(VariableTypes type)
+    {
+      if (list_editor == null)
+      {
+        return;
+      }
+
+      VariableTypes old = result.type;
+      result.type = type;
+
+      if (old != result.type)
+      {
+        switch (old)
+        {
+          case VariableTypes.List:
+            list_editor.SetList(null);
+            break;
+        }
+      }
+
+      switch (result.type)
+      {
+        case VariableTypes.Bool:
+          result.default_value = &#34;false&#34;;
+          break;
+        case VariableTypes.String:
+          result.default_value = &#34;&#34;;
+          break;
+        case VariableTypes.List:
+            result.container_info = new ObservableCollection&lt;string&gt;();
+            result.default_value = &#34;&#34;;
+          break;
+      }
+
+
+      if (base_.type == result.type)
+      {
+        result.container_info = base_.container_info;
+        result.default_value = base_.default_value;
+      }
+
+      list_editor.SetList(result.container_info as ObservableCollection&lt;string&gt;);
+    }
+
+    /**
+     * @brief Callback for when the type the variable was changed.
+     * @param[in] sender (object) The sender of the event.
+     * @param[in] e (SelectionChangedEventArgs) Information about how the selection changed.
+     */
+    private void type_selector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      SetupVariable((VariableTypes)Enum.Parse(typeof(VariableTypes), e.AddedItems[0].ToString()));
+    }
+
+    /**
+     * @brief Callback for when the name of the varable was changed.
+     * @param[in] sender (object) The sender of the event.
+     * @param[in] e (cpg.TextChangedEventArgs) The new and old value for the name.
+     */
+    private void name_value_FinalTextChanged(object sender, TextChangedEventArgs e)
+    {
+      TextBox box = (sender as TextBox);
+      if (box == null)
+      {
+        return;
+      }
+
+      if (ValidateString(e.new_text) == false)
+      {
+        string msg = &#34;Characters: \&#34; &#34;;
+        foreach (char c in invalid_chars)
+        {
+          msg &#43;= c;
+          msg &#43;= &#34; ,&#34;;
+        }
+        box.Text = e.old_text;
+        msg &#43;= &#34;\&#34;  are not allowed in variable names&#34;;
+        MessageBox.Show(msg, &#34;Invalid Variable name&#34;, MessageBoxButton.OK, MessageBoxImage.Warning);
+        return;
+      }
+
+      foreach (Variable v in owner_.variables_)
+      {
+        if (v.name == box.Text)
+        {
+          box.Text = e.old_text;
+          string msg = string.Format(&#34;A variable with the name \&#34;{0}\&#34; allready exists.&#34;, e.new_text);
+          MessageBox.Show(msg, &#34;Variable exists warning&#34;, MessageBoxButton.OK, MessageBoxImage.Warning);
+          return;
+        }
+      }
+    }
+
+    /**
+     * @brief Checks if a string contaains an invalid charcater. Used for validating the name of varibles.
+     * @param[in] value (string) The string to be validated.
+     * @return (bool) results in true if the string does not contain any invalid characters.
+     */
+    private bool ValidateString(string value)
+    {
+      byte[] ascii = Encoding.ASCII.GetBytes(value);
+      foreach(byte b in ascii)
+      {
+        int index = b / 64;
+        if ((ascii_mask[index] &amp; (1u &lt;&lt; (b % 64))) != 0)
+        {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    /**
+     * @brief Callback for when the &#39;ok&#39; button is pressed. this closes the editor and sets the dialg result to true.
+     * @param[in] sender (object) The sender of the event.
+     * @param[in] e (RoutedEventArgs) Arguments send with the event
+     */
+    private void OkButton_Click(object sender, RoutedEventArgs e)
+    {
+      DialogResult = true;
+      Close();
+    }
+
+   /**
+    * @brief Callback for when the &#39;cancel&#39; button is pressed. this closes the editor and sets the dialg result to false.
+    * @param[in] sender (object) The sender of the event.
+    * @param[in] e (RoutedEventArgs) Arguments send with the event
+    */
+    private void CancelButton_Click(object sender, RoutedEventArgs e)
+    {
+      DialogResult = false;
+      Close();
+    }
+  }
+}
+
+       </code></pre>
+
+          </div>
+           <div class="text">Backend for the variable editor</div>
+        </div>
+        
+        
+        <a class="prev_btn" id="slideshow_btn" onclick="plusSnippet(-1)">&#10094;</a>
+        <a class="next_btn" id="slideshow_btn" onclick="plusSnippet(1)">&#10095;</a>
+        
+      </div>
+      <div style="text-align:center">
+        
+        <span class="snippet_dot" onclick="currentSnippet( 0 )"></span>
+        
+        <span class="snippet_dot" onclick="currentSnippet( 1 )"></span>
+        
+      </div>
+
+    </div>
+    
+
+    <div>
+      <h2>Summary</h2>
+      The cross platform project generator is a tool that combines CMake and Perforce to generate visual studio solutions for multiple platforms. It also allows you to create custom variables which can be used in your CMake scripts and it allows you to specify command line steps post generation. The main  goal is to allow end users to only see variables relevant to them and to allow projects to be generated for PS4 as well.
+      
+    </div>
+    <div class="container">
+      <div class="row tools">
+        <div class="col-md-4">
+          <h2>Contributions</h2>
+          <ul>
+            
+            <li>Everything (Personal Project)</li>
+            
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2>Tools Used</h2>
+          <div class="row tools">
+
+
+            
+            
+            <div class="column tools_column">
+              
+              
+              <div class="logo_card">
+                <a href="https://www.visualstudio.com/" target="_blank">
+                  <img src="/img/icons/visual-studio.png" class="icon">
+                </a>
+                <div class="card-text">
+                  visual studio
+                </div>
+              </div>
+              
+              
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/" target="_blank">
+                  <img src="/img/icons/wpf.png" class="icon">
+                </a>
+                <div class="card-text">
+                  wpf
+                </div>
+              </div>
+              
+              
+              
+              
+            </div>
+            <div class="column tools_column">
+              
+              
+              
+              
+              
+              
+              <div class="logo_card">
+                <a href="http://www.stack.nl/~dimitri/doxygen/" target="_blank">
+                  <img src="/img/icons/doxygen.png" class="icon">
+                </a>
+                <div class="card-text">
+                  Doxygen
+                </div>
+              </div>
+              
+              
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h2>Team</h2>
+          <p>
+            
+            Programmers: 1 <br>
+            
+          </p>
+          
+          <h2>Project length</h2>
+          <p>
+            6 weeks
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="article-style" itemprop="articleBody">
+
+      <h2>Details</h2>
+      <p>This project started out as a little experiment from one of the my previous school projects. Here we used a similar generator to generate projects for ps4 and windows. I wanted to expand on this and make it more user friendly / custimizable.
+I wrote this application from scratch (i.e I didn&rsquo;t huse any code from the previous project). in addition to being able to generate cross platform I added the following things.</p>
+
+<ul>
+    <li> The option to edit / modify the variables yourself
+    <li> The option to execute post - generate commands
+    <li> The option to import / export settings
+  <li> Integrated perforce
+  <li> The option to deploy the application. This puts out a zip file with a version of the app that has all edit functionality stripped. this gives the end users a version that is much easier to understand and use.
+</ul>
+
+    </div>
+
+    <p class="project-download">
+      
+      
+      <a href="https://github.com/StanPepels/StanPepels.github.io/blob/master/builds/cpg.zip?raw=true" class="btn btn-primary btn-outline">
+        Download
+      </a>
+      
+      
+    </p>
+  </div>
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://stanpepels.github.io/project/jenkins-client/"><span
+      aria-hidden="true">&larr;</span> Previous</a></li>
+    
+
+    
+    <li class="next"><a href="https://stanpepels.github.io/project/jenkins/">Next <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<script>
+  var snippetIndex = 1;
+  showSnippets(snippetIndex)
+  toggleSnippets()
+
+  function showSnippets(n) {
+    var i;
+    var slides = document.getElementsByClassName("snippet");
+    if (slides.length == 0) {
+      return;
+    }
+
+
+    var dots = document.getElementsByClassName("snippet_dot");
+    if (n > slides.length) { snippetIndex = 1 }
+    if (n < 1) { snippetIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[snippetIndex - 1].style.display = "block";
+    dots[snippetIndex - 1].className += " dot_active";
+  }
+
+  function plusSnippet(n) {
+    showSnippets(snippetIndex += n);
+  }
+
+  function currentSnippet(n) {
+    showSnippets(snippetIndex = n + 1);
+  }
+
+
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function toggleSnippets() {
+    var btns = document.getElementsByClassName("snippet-toggle");
+    for (i = 0; i < btns.length; i++) {
+      if (btns[i].classList.contains("active")) {
+        btns[i].classList.remove("active");
+      }
+      else {
+        btns[i].className += " active";
+      }
+    }
+
+
+
+    var containers = document.getElementsByClassName("snippet-container");
+    for (i = 0; i < containers.length; i++) {
+      if (containers[i].style.display != "none") {
+        containers[i].style.display = "none";
+      }
+      else if (containers[i].style.display == "none") {
+        containers[i].style.display = "block";
+      }
+    }
+  }
+
+
+
+
+  function stopVideo(element) {
+    var wrapper = element.querySelector('.videoWrapper');
+
+    if (wrapper) {
+      var iframe = element.querySelector('iframe');
+      var video = element.querySelector('video');
+      if (iframe) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+      }
+      if (video) {
+        video.pause();
+      }
+    }
+  };
+
+  function plusSlides(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    stopVideo(document.getElementsByClassName("mySlides")[slideIndex - 1]);
+    showSlides(slideIndex = n + 1);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" dot_active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " dot_active";
+  }
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Your Name &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

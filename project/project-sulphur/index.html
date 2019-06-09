@@ -237,8 +237,24 @@
     </div>
     
 
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          
+          <a class="snippet-toggle btn btn-primary btn-large active" onclick="toggleSnippets()">code snippets</a>
+          
+        </div>
+        <div class="col-md-2">
+          
+        </div>
+      </div>
+    </div>
+
+
     
-    <a class="snippet-toggle btn btn-primary btn-large active" onclick="toggleSnippets()">code snippets</a>
     <div class="snippet-container">
       <div class="slideshow-container">
         
@@ -1501,7 +1517,6 @@ namespace sulphur.editor
     </div>
     
 
-
     <div>
       <h2>Summary</h2>
       Project sulphur is a cross-platform engine project by NHTV students. The engine is build in C&#43;&#43; with an editor build in .Net WPF framework. The engine has a special feature we call the &#39;sulphur rewinder&#39;. This feature allows you to rewind the game in the editor and inspect the data from previous frames. Besides this the editor is completely detached from the engine meaning that if the engine crashes there is no progress lost and the editor can recover.
@@ -1514,7 +1529,7 @@ namespace sulphur.editor
     <div class="container">
       <div class="row tools">
         <div class="col-md-4">
-          <h2>Responsibilities</h2>
+          <h2>Contributions</h2>
           <ul>
             
             <li>Sulphur builder: interface</li>
@@ -1541,6 +1556,9 @@ namespace sulphur.editor
           <h2>Tools Used</h2>
           <div class="row tools">
 
+
+            
+            
             <div class="column tools_column">
               
               
@@ -1610,6 +1628,7 @@ namespace sulphur.editor
               
               
             </div>
+            
           </div>
         </div>
 
@@ -1648,6 +1667,7 @@ This means that the engine you see in the editor is its own separate process. An
 These other versions could run on other machines such as a PS4 devkit. This, in turn, would then allow for simultaneous testing and developing for multiple platforms without having to switch around platforms or create a build before testing.
     
 </div>
+<p></p>
 
 <p><div style="float: right; position: relative; width: 50%;">
     <div>
@@ -1666,7 +1686,8 @@ These other versions could run on other machines such as a PS4 devkit. This, in 
     <strong>Builder work:</strong> With the builder I mainly worked on the command line interfaces. These interfaces allow other programmers to easily add commands with flags and arguments to the builder. I was also responsible for doing the shader pipeline.
 The shader pipeline takes in a shader written in hlsl with some custom definitions. This single file is then converted into a shader package that can be loaded by the engine and used to render with Directx12, Vulkan, and GNM(PS4).
     
-</div></p>
+</div>
+<p></p></p>
 
 <p><div style="float: left; position: relative; width: 50%;">
     <div>
@@ -1689,7 +1710,8 @@ The editor also has a project pipeline allowing you to set up multiple game proj
 <p>Under the hood, the editor uses a DLL version of the sulphur builder. I worked on exposing the sulphur builder(written in C++) functionality to C# so it can be used by the editor.</p>
 
     
-</div></p>
+</div>
+<p></p></p>
 
     </div>
 
@@ -1714,7 +1736,7 @@ The editor also has a project pipeline allowing you to set up multiple game proj
     
 
     
-    <li class="next"><a href="https://stanpepels.github.io/project/clouded/">Next <span
+    <li class="next"><a href="https://stanpepels.github.io/project/jenkins-client/">Next <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
