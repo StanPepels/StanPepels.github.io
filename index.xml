@@ -465,41 +465,6 @@ We did not use an entity component system like unity because of time constraints
 &lt;/ul&gt;
 
 &lt;p&gt;Their support has been very helpful during the prototyping stage, and I&amp;rsquo;m grateful that they were willing to provide samples for the project.&lt;/p&gt;
-
-&lt;p&gt;The project started when I was making a mod for a game. I used an old Nintendo 3DS XL to emulate the game, but I found that my custom sprites looked washed out.&lt;/p&gt;
-
-&lt;p&gt;While looking for alternative devices to play emulated games on, I mostly came across Chinese-made Android handhelds. One thing that put me off was that many of these devices come pre-loaded with emulated games, often without any clear indication that the original developers were compensated for their work. As a game developer myself, I believe it&amp;rsquo;s important to support the people who make the games we enjoy. I&amp;rsquo;d much rather see people purchase the games they want to play and create their own backups for emulation. On top of that, I wasn&amp;rsquo;t comfortable trusting the custom Android versions typically found on these devices. These concerns led me to research what it would take to develop my own device.&lt;/p&gt;
-
-&lt;p&gt;After convincing myself that this would indeed be possible, I began my journey. I chose the Raspberry Pi CM5 module as my base platform and dubbed the project Strawberry-Pi.&lt;/p&gt;
-
-&lt;p&gt;I divided the work into smaller, bite-sized chunks.&lt;/p&gt;
-
-&lt;ul&gt;
-
-&lt;li&gt;Audio: Make a PCB to prototype audio support.&lt;/li&gt;
-&lt;li&gt;I/O: Buttons, triggers, etc.&lt;/li&gt;
-&lt;li&gt;Power: Battery power, USB-C switchover, and charging.&lt;/li&gt;
-&lt;li&gt;Video: Display and LED driver.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I had to learn a lot of new software and hardware skills. I designed my own development PCBs, which are assembled by hand. This required me to learn PCB design software (KiCad, in my case), as well as how to solder small SMD components and handle the various other tasks involved in designing and assembling a custom PCB.&lt;/p&gt;
-
-&lt;p&gt;The entire case (controller, display module, etc.) is also designed from scratch. For this, I used FreeCAD. I started by disassembling devices such as PS5 and Meta Quest controllers to study their designs, and from there, I created my own. Everything is designed to be printed using a 3D FDM printer. The goal is to allow people to print their own parts, provided they have access to a 3D printer capable of printing the required material (ASA).&lt;/p&gt;
-
-&lt;p&gt;Currently, I have completed most of the electrical prototypes and have a proof of concept for each. I&amp;rsquo;m now designing the case that will house everything. I&amp;rsquo;ve got the controller design dialed in and am working on the display enclosure.&lt;/p&gt;
-
-&lt;p&gt;The last step is to merge all my smaller prototypes into a single motherboard and design a slimmer heatsink for the CM5 module.&lt;/p&gt;
-
-&lt;p&gt;The end goal is to make everything public and offer it as a DIY kit. All components will be 3D-printable, and all electrical schematics will be made public. Whether I&amp;rsquo;ll offer some form of partial assembly is still up in the air. Once everything is online, I&amp;rsquo;ll focus on the software and build a custom Linux distribution for the device.&lt;/p&gt;
-
-&lt;p&gt;A big shout-out also goes to the following companies, which were willing to help by providing samples of LiPo batteries, displays, and cover glass.&lt;/p&gt;
-
-&lt;ul&gt;
-
-&lt;li&gt;&lt;a href=&#34;https://midasdisplays.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Midas Displays&lt;/a&gt;: They provided samples of the display module used.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.konshenglass.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Konshen Glass&lt;/a&gt;: They provided samples of the cover glass used in the display module.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.lipobatteries.net/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;LiPol Battery&lt;/a&gt;: They provided samples of the LiPo cell used to power the device.&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
