@@ -336,31 +336,170 @@ We did not use an entity component system like unity because of time constraints
       <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
       
       <guid>https://stanpepels.github.io/project/strawberry-pi/</guid>
-      <description>&lt;p&gt;The project started when I was making a mod for a game. I used an old nintendo 3DS XL to emulate the game but I found that my custom sprites were washed out.
-When looking for alternatives to play emulated games on I found only android based chinese devices which did not sit well with me. As such I started researching what it would take to develop my own device.
-After convincing myself this would indeed be possible I began my yourney. I choose the raspberry pi CM5 module as my base platform and dubbed the project strawberry-pi
-I divided the work into smaller  bite size chunks.&lt;/p&gt;
+      <description>
+
+&lt;h1 id=&#34;strawberry-pi-building-my-own-handheld-gaming-device&#34;&gt;Strawberry-Pi: Building my own handheld gaming device&lt;/h1&gt;
+
+&lt;p&gt;This project started while I was working on a mod for a game. I was playing it on my old Nintendo 3DS XL, and I noticed that the display resolution didn&amp;rsquo;t scale particularly well with the original game&amp;rsquo;s resolution. The emulator&amp;rsquo;s scaling and filtering options made some of the custom sprites I&amp;rsquo;d created look washed out, which was frustrating when I&amp;rsquo;d put effort into getting them to look right.&lt;/p&gt;
+
+&lt;p&gt;That got me thinking about building my own handheld emulation device. I&amp;rsquo;ve always loved handheld consoles, and I&amp;rsquo;ve owned quite a few over the years, from my purple Game Boy Color to the Game Boy Advance SP, the original Nintendo DS, the DS XL, and eventually the 3DS XL. I&amp;rsquo;ve also been interested in hardware development and low-level programming for a while, so building a handheld seemed like a good opportunity to combine those interests.&lt;/p&gt;
+
+&lt;h2 id=&#34;choosing-the-platform&#34;&gt;Choosing the platform&lt;/h2&gt;
+
+&lt;p&gt;I initially looked at existing handheld emulation devices, particularly the many Android-based handhelds coming out of China. There are some interesting devices on the market, but I had a couple of reservations.&lt;/p&gt;
+
+&lt;p&gt;One concern was the way some devices are sold with large collections of preloaded games, without much clarity about whether the original creators are being compensated. As a game developer myself, I believe people should buy the games they want to play and support the people who make them. If you want to emulate games you already own, making your own backups is a much better approach than relying on questionable preloaded collections. Since I do believe that once you paid for something its yours to do with as you please.&lt;/p&gt;
+
+&lt;p&gt;I was also hesitant about trusting custom Android builds on devices where I had little visibility into how the software was maintained. I wanted more control over the software running on my device, as well as the freedom to experiment with it.&lt;/p&gt;
+
+&lt;p&gt;So, rather than buying a ready-made handheld, I decided to build one myself.&lt;/p&gt;
+
+&lt;p&gt;The project is called &lt;strong&gt;Strawberry-Pi&lt;/strong&gt;, and at its heart is the Raspberry Pi Compute Module 5 (CM5).&lt;/p&gt;
+
+&lt;p&gt;I considered several other platforms, including the Raspberry Pi Zero 2 W and modules from Radxa. The Zero 2 W would make it possible to build a smaller and potentially more power-efficient device, but I wanted some extra performance and flexibility for things beyond emulation. I didn&amp;rsquo;t have a completely defined end goal at that point, so having some headroom seemed worthwhile. Radxa&amp;rsquo;s modules were also worth considering, but the Raspberry Pi ecosystem and its larger community made the CM5 a more comfortable choice.&lt;/p&gt;
+
+&lt;p&gt;The Compute Module form factor is particularly appealing for a project like this. Compared with using a complete Raspberry Pi 5, it gives me more freedom to design a compact custom motherboard around the components I actually need.&lt;/p&gt;
+
+&lt;p&gt;Power consumption is one of the main challenges with using the CM5 in a battery-powered device. However, with some tuning, such as reducing clock speeds and disabling features that aren&amp;rsquo;t needed, I hope to keep consumption at a reasonable level without sacrificing too much performance.&lt;/p&gt;
+
+&lt;h2 id=&#34;designing-the-electronics&#34;&gt;Designing the electronics&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ve split the electronics into several subsystems. This makes it easier to develop and test each part independently before bringing everything together on a single motherboard.&lt;/p&gt;
+
+&lt;h3 id=&#34;audio&#34;&gt;Audio&lt;/h3&gt;
+
+&lt;p&gt;The audio system takes digital audio from the CM5 over its I²S interface and sends it to a DAC, which converts it into an analogue signal.&lt;/p&gt;
+
+&lt;p&gt;From there, the signal is split between two amplifier paths: one for the built-in speakers and another for the headphone output. The speaker amplifier is designed to deliver around 1 W, while the headphone amplifier handles the headphone output.&lt;/p&gt;
+
+&lt;p&gt;The headphone jack also has switching functionality, so connecting headphones disables the speakers and routes audio to the headphone output instead. This keeps the behaviour simple and familiar.&lt;/p&gt;
+
+&lt;h3 id=&#34;i-o-and-controls&#34;&gt;I/O and controls&lt;/h3&gt;
+
+&lt;p&gt;The controls are designed to be straightforward and responsive. The face buttons and bumpers work by pulling a voltage line low when pressed, allowing the system to detect button inputs.&lt;/p&gt;
+
+&lt;p&gt;The CM5 doesn&amp;rsquo;t expose enough GPIO pins for everything I want to connect, so I&amp;rsquo;ve added an I/O expander over I²C to provide more inputs without using up all the available pins.&lt;/p&gt;
+
+&lt;p&gt;The analogue controls need a different approach. The joysticks use potentiometers to report their positions, while the triggers use Hall-effect sensors. These analogue signals are read through analogue-to-digital converters (ADCs), with the resulting measurements communicated to the CM5 over I²C.&lt;/p&gt;
+
+&lt;p&gt;Using Hall-effect sensors for the triggers should provide smooth analogue input without relying on the mechanical contact used in a conventional potentiometer. It also gives me flexibility in how the triggers are calibrated and interpreted in software.&lt;/p&gt;
+
+&lt;h3 id=&#34;power-management-and-battery-life&#34;&gt;Power management and battery life&lt;/h3&gt;
+
+&lt;p&gt;Power management is particularly important in a handheld device, both for safety and for getting a useful amount of play time out of the battery.&lt;/p&gt;
+
+&lt;p&gt;The handheld uses a 10,000 mAh LiPo battery with a nominal voltage of 3.7 V, giving it around 37 Wh of stored energy. My target is &lt;strong&gt;5–6 hours of battery life during normal use&lt;/strong&gt;, roughly comparable to a Nintendo DS.&lt;/p&gt;
+
+&lt;p&gt;The USB-C input is designed for 5 V, without USB Power Delivery negotiation. I&amp;rsquo;ve used two eFuses to protect the battery and USB-C power paths, allowing the higher of the two input voltages to supply the system. When USB-C power is connected, the battery is disconnected from the main VSYS power path.&lt;/p&gt;
+
+&lt;p&gt;VSYS then feeds a regulator that provides a stable 5 V supply for the system. Additional regulators generate the 3.3 V and 1.8 V rails required by the other components, with smaller local power domains where needed.&lt;/p&gt;
+
+&lt;p&gt;Charging is enabled only when USB-C power is present, using the power-good (PG) signal from an eFuse. I&amp;rsquo;ve also included current sensing after the 5 V regulator, allowing the system to monitor its power consumption and reduce the charging current when the handheld itself is drawing more power. The goal is to keep the total draw within the default USB-C power budget of 5 V at 3 A.&lt;/p&gt;
+
+&lt;p&gt;For context, the CM5&amp;rsquo;s idle power consumption is around 2.3 W in &lt;a href=&#34;https://www.jeffgeerling.com/blog/2024/raspberry-pi-cm5-2-3x-faster-drop-upgrade-mostly/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Jeff Geerling&amp;rsquo;s testing&lt;/a&gt;, while its peak consumption can be considerably higher. I&amp;rsquo;m budgeting for a 5 V, 3 A supply, giving a maximum power budget of 15 W. If the system were drawing that much continuously, the battery would last roughly two hours after allowing for conversion losses.&lt;/p&gt;
+
+&lt;p&gt;At idle, the CM5 itself draws around 400–500 mA at 5 V, or 2–2.5 W. Based on the battery&amp;rsquo;s 37 Wh capacity, that suggests roughly 14.5 hours at the higher end of that idle draw, before accounting for conversion losses and the additional power consumed by the display, audio, and other components.&lt;/p&gt;
+
+&lt;p&gt;Normal gameplay should fall somewhere between those extremes, making 5–6 hours a reasonable initial target. These are estimates rather than measured results, though; I&amp;rsquo;ll need to test the complete device to see how close I get.&lt;/p&gt;
+
+&lt;h3 id=&#34;display-and-backlight&#34;&gt;Display and backlight&lt;/h3&gt;
+
+&lt;p&gt;For the display, I was able to obtain samples of a 800 × 1280 display module from a supplier. The resolution was one of the main reasons I chose it.&lt;/p&gt;
+
+&lt;p&gt;When rotated into landscape orientation, the display becomes 1280 × 800. That works particularly well for Game Boy Advance games, which run at 240 × 160 pixels: scaling them by exactly 5× produces an image of 1200 × 800 pixels. That leaves 80 horizontal pixels for borders or other interface elements without needing to stretch the game image.&lt;/p&gt;
+
+&lt;p&gt;The display needs to be rotated 90 degrees in software to use it in landscape orientation, but that&amp;rsquo;s a manageable trade-off for the resolution and scaling options it provides.&lt;/p&gt;
+
+&lt;p&gt;The panel is rated at 1000 cd/m², which should make it bright enough to use outdoors in many conditions, although direct sunlight and reflections will still affect visibility.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also designed a separate LED driver for the backlight. Its PWM input allows brightness control while maintaining a stable output voltage. The intention is to provide smooth brightness adjustment without visible flicker, though I&amp;rsquo;ll need to verify the behaviour on the finished hardware.&lt;/p&gt;
+
+&lt;h2 id=&#34;designing-the-enclosure&#34;&gt;Designing the enclosure&lt;/h2&gt;
+
+&lt;p&gt;The enclosure is being designed from scratch in FreeCAD. I wanted the device to feel like a purpose-built handheld rather than a development board squeezed into a generic case.&lt;/p&gt;
+
+&lt;p&gt;For the overall size, I looked at devices such as the Steam Deck and Nintendo Switch. My target is somewhere between the two, but much closer to the Switch Lite in size.&lt;/p&gt;
+
+&lt;p&gt;I also disassembled a PS5 controller and a Meta Quest controller to get a better understanding of how their internal layouts and controls are arranged. Looking at existing hardware is useful for understanding how much space the buttons, joysticks, and supporting components actually need.&lt;/p&gt;
+
+&lt;p&gt;One thing I noticed when using the Switch was that its controls felt a little cramped for my hands. For Strawberry-Pi, I&amp;rsquo;ve made the face buttons slightly larger and spaced them further apart. I&amp;rsquo;ve also moved the joysticks a little closer to the display, with the aim of creating a more natural resting position for my thumbs.&lt;/p&gt;
+
+&lt;p&gt;Ergonomics are still something I&amp;rsquo;ll need to evaluate properly once I have a complete working prototype. At this stage, my priority is to get everything to fit and function correctly. If the device needs more substantial grips or other changes to improve comfort, I can incorporate those into a later revision.&lt;/p&gt;
+
+&lt;p&gt;The enclosure is designed for FDM 3D printing, so people can make their own case without needing specialised manufacturing equipment. I&amp;rsquo;m planning to use ASA rather than PLA because it is generally less brittle and offers better heat and UV resistance, which should make it more suitable for a portable device that may get warm during use.&lt;/p&gt;
+
+&lt;p&gt;There is one practical consideration: ASA can be more demanding to print than PLA, so anyone wanting to build the device will need a 3D printer capable of printing it, with enough build volume for the enclosure parts.&lt;/p&gt;
+
+&lt;h2 id=&#34;current-progress&#34;&gt;Current progress&lt;/h2&gt;
+
+&lt;p&gt;Most of the electrical subsystems have been prototyped, and I&amp;rsquo;ve got proof of concept for each of them. The controller layout is also coming together, and I&amp;rsquo;m currently working on the enclosure around the display.&lt;/p&gt;
+
+&lt;p&gt;The next major step is to bring everything together onto a single motherboard. That should reduce the amount of space taken up by separate prototype boards and wiring, making it possible to work towards a slimmer and more integrated design.&lt;/p&gt;
+
+&lt;p&gt;I also need to design a slimmer heatsink for the CM5 so that the cooling solution fits within the enclosure while still keeping temperatures under control.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s still plenty to do, but getting each subsystem working independently has been an important milestone. It means I can focus on integration and refinement rather than trying to debug every part of the system at once.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-end-goal-an-open-diy-handheld&#34;&gt;The end goal: an open DIY handheld&lt;/h2&gt;
+
+&lt;p&gt;My intention is to make Strawberry-Pi an open project. I&amp;rsquo;d like to publish the electrical schematics, PCB design files, mechanical CAD files, and assembly instructions so that anyone interested can build their own device or adapt the design for their own needs.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d also like to maintain a custom Linux distribution tailored to the hardware, rather than relying on an off-the-shelf operating system that may not be optimised for the device.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m still considering exactly how to distribute the project. One possibility is to offer a kit containing the PCBs and fasteners, leaving builders to print their own enclosure and source the remaining components. Another option would be to provide pre-printed enclosure parts to make assembly easier.&lt;/p&gt;
+
+&lt;p&gt;This is primarily a hobby project and a way for me to explore hardware design, embedded systems, and Linux while building something I&amp;rsquo;d genuinely enjoy using. Making the design open source means other people can learn from it, build their own, or adapt it for their own projects.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m also still deciding on the licensing. GPL-3.0 is one possibility for the software, while the hardware design files may be better suited to a dedicated open-hardware licence.&lt;/p&gt;
+
+&lt;p&gt;If you want to build your own version, experiment with the design, or use parts of it in another project, that&amp;rsquo;s exactly the kind of thing I&amp;rsquo;d like to enable. I want the work to be useful to other makers, not just something that lives on my desk.&lt;/p&gt;
+
+&lt;h2 id=&#34;acknowledgements&#34;&gt;Acknowledgements&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to thank the suppliers who provided samples that helped me get the project moving:&lt;/p&gt;
 
 &lt;ul&gt;
-    &lt;li&gt; Audio: Make an pcb to propototype audio support
-    &lt;li&gt; IO: Button, triggers etc
-    &lt;li&gt; Power: Battery power + usb-c switchover and charge
-    &lt;li&gt; Video: Display + led driver
+&lt;li&gt;&lt;a href=&#34;https://midasdisplays.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Midas Displays&lt;/a&gt; for providing display module samples.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.konshenglass.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Konshen Glass&lt;/a&gt; for providing cover glass samples.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lipolibatteries.net/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;LiPol Battery&lt;/a&gt; for providing LiPo cell samples.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Currently I have most of the electrical prototypes done and have a proof of concept for each. I&amp;rsquo;m now designing the case where everything sits in, I&amp;rsquo;ve got the controller design dialed in and am working on the display enclosure.
-The last step is to merge all my smaller prototypes in a single motherboard and design a slimmer heatsink for the CM5 module.&lt;/p&gt;
+&lt;p&gt;Their support has been very helpful during the prototyping stage, and I&amp;rsquo;m grateful that they were willing to provide samples for the project.&lt;/p&gt;
 
-&lt;p&gt;The end-goal is to make everything public and offer a DIY kit. all components can be 3D printed and all electrical schematics will be made public. After which I will focus on the software to build a custom linux distro for the device.&lt;/p&gt;
+&lt;p&gt;The project started when I was making a mod for a game. I used an old Nintendo 3DS XL to emulate the game, but I found that my custom sprites looked washed out.&lt;/p&gt;
 
-&lt;p&gt;A big shoutout also goes to the following companies which were willing to help me provide samples for lipo batteries, displays and cover glass&lt;/p&gt;
+&lt;p&gt;While looking for alternative devices to play emulated games on, I mostly came across Chinese-made Android handhelds. One thing that put me off was that many of these devices come pre-loaded with emulated games, often without any clear indication that the original developers were compensated for their work. As a game developer myself, I believe it&amp;rsquo;s important to support the people who make the games we enjoy. I&amp;rsquo;d much rather see people purchase the games they want to play and create their own backups for emulation. On top of that, I wasn&amp;rsquo;t comfortable trusting the custom Android versions typically found on these devices. These concerns led me to research what it would take to develop my own device.&lt;/p&gt;
 
-&lt;p&gt;&lt;ul&gt;
-    &lt;li&gt; &lt;a href=&#34;https://midasdisplays.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Midas Displays&lt;/a&gt;: They provided samples for the display module used.
-    &lt;li&gt; &lt;a href=&#34;https://www.konshenglass.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Konshen Glass&lt;/a&gt;: They provided samples for the cover glass used in the display module.
-    &lt;li&gt; &lt;a href=&#34;https://www.lipobatteries.net/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;LiPol Battery&lt;/a&gt;: They provided samples for the lipo cell used to power the device.&lt;/p&gt;
+&lt;p&gt;After convincing myself that this would indeed be possible, I began my journey. I chose the Raspberry Pi CM5 module as my base platform and dubbed the project Strawberry-Pi.&lt;/p&gt;
 
-&lt;p&gt;&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;I divided the work into smaller, bite-sized chunks.&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;Audio: Make a PCB to prototype audio support.&lt;/li&gt;
+&lt;li&gt;I/O: Buttons, triggers, etc.&lt;/li&gt;
+&lt;li&gt;Power: Battery power, USB-C switchover, and charging.&lt;/li&gt;
+&lt;li&gt;Video: Display and LED driver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I had to learn a lot of new software and hardware skills. I designed my own development PCBs, which are assembled by hand. This required me to learn PCB design software (KiCad, in my case), as well as how to solder small SMD components and handle the various other tasks involved in designing and assembling a custom PCB.&lt;/p&gt;
+
+&lt;p&gt;The entire case (controller, display module, etc.) is also designed from scratch. For this, I used FreeCAD. I started by disassembling devices such as PS5 and Meta Quest controllers to study their designs, and from there, I created my own. Everything is designed to be printed using a 3D FDM printer. The goal is to allow people to print their own parts, provided they have access to a 3D printer capable of printing the required material (ASA).&lt;/p&gt;
+
+&lt;p&gt;Currently, I have completed most of the electrical prototypes and have a proof of concept for each. I&amp;rsquo;m now designing the case that will house everything. I&amp;rsquo;ve got the controller design dialed in and am working on the display enclosure.&lt;/p&gt;
+
+&lt;p&gt;The last step is to merge all my smaller prototypes into a single motherboard and design a slimmer heatsink for the CM5 module.&lt;/p&gt;
+
+&lt;p&gt;The end goal is to make everything public and offer it as a DIY kit. All components will be 3D-printable, and all electrical schematics will be made public. Whether I&amp;rsquo;ll offer some form of partial assembly is still up in the air. Once everything is online, I&amp;rsquo;ll focus on the software and build a custom Linux distribution for the device.&lt;/p&gt;
+
+&lt;p&gt;A big shout-out also goes to the following companies, which were willing to help by providing samples of LiPo batteries, displays, and cover glass.&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;a href=&#34;https://midasdisplays.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Midas Displays&lt;/a&gt;: They provided samples of the display module used.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.konshenglass.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Konshen Glass&lt;/a&gt;: They provided samples of the cover glass used in the display module.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lipobatteries.net/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;LiPol Battery&lt;/a&gt;: They provided samples of the LiPo cell used to power the device.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
