@@ -331,6 +331,56 @@ We did not use an entity component system like unity because of time constraints
     </item>
     
     <item>
+      <title>Strawberry pi</title>
+      <link>https://stanpepels.github.io/project/strawberry-pi/</link>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanpepels.github.io/project/strawberry-pi/</guid>
+      <description>&lt;p&gt;The project started when I was making a mod for a game. I used an old nintendo 3DS XL to emulate the game but I found that my custom sprites were washed out.
+When looking for alternatives to play emulated games on I found only android based chinese devices which did not sit well with me. As such I started researching what it would take to develop my own device.
+After convincing myself this would indeed be possible I began my yourney. I choose the raspberry pi CM5 module as my base platform and dubbed the project strawberry-pi
+I divided the work into smaller  bite size chunks.&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt; Audio: Make an pcb to propototype audio support
+    &lt;li&gt; IO: Button, triggers etc
+    &lt;li&gt; Power: Battery power + usb-c switchover and charge
+    &lt;li&gt; Video: Display + led driver
+&lt;/ul&gt;
+
+&lt;p&gt;Currently I have most of the electrical prototypes done and have a proof of concept for each. I&amp;rsquo;m now designing the case where everything sits in, I&amp;rsquo;ve got the controller design dialed in and am working on the display enclosure.
+The last step is to merge all my smaller prototypes in a single motherboard and design a slimmer heatsink for the CM5 module.&lt;/p&gt;
+
+&lt;p&gt;The end-goal is to make everything public and offer a DIY kit. all components can be 3D printed and all electrical schematics will be made public. After which I will focus on the software to build a custom linux distro for the device.&lt;/p&gt;
+
+&lt;p&gt;A big shoutout also goes to the following companies which were willing to help me provide samples for lipo batteries, displays and cover glass&lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;
+    &lt;li&gt; &lt;a href=&#34;https://midasdisplays.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Midas Displays&lt;/a&gt;: They provided samples for the display module used.
+    &lt;li&gt; &lt;a href=&#34;https://www.konshenglass.com/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;Konshen Glass&lt;/a&gt;: They provided samples for the cover glass used in the display module.
+    &lt;li&gt; &lt;a href=&#34;https://www.lipobatteries.net/&#34; class=&#34;page_link&#34; target=&#34;_blank&#34;&gt;LiPol Battery&lt;/a&gt;: They provided samples for the lipo cell used to power the device.&lt;/p&gt;
+
+&lt;p&gt;&lt;/ul&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>plex media utility</title>
+      <link>https://stanpepels.github.io/project/media-utility/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://stanpepels.github.io/project/media-utility/</guid>
+      <description>&lt;p&gt;This project was started when we were digitizing a big collection of dvd&amp;rsquo;s and blu-rays. The process involves multiple tools to rip the dvds and then encode them. after doing a couple I felt like it should be a lot easier and so this project was started.
+The tool has the following features:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt; Convert and encode ripped dvd&#39;s in one go
+    &lt;li&gt; manage folder structure in a way thats compatible with plex for self hosting.
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>AbDuckTed</title>
       <link>https://stanpepels.github.io/project/abduckted/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
